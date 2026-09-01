@@ -1,12 +1,14 @@
 # Ginés Sánchez
 
-> Ginés Sánchez is an anthropologist turned builder. He builds software and
-> companies at Alteridad.
+> Ginés Sánchez builds software and companies at Alteridad, making it cheaper
+> to turn what an organisation knows into action.
 
-Ginés trained as an anthropologist, writing his dissertation in linguistic
-political ecology. He now builds software and companies at Alteridad. His work
-uses language models and software to help organisations recover context, make
-better decisions, and see what their actions cause.
+Ginés builds software and companies at Alteridad. The work makes it cheaper to
+turn what an organisation knows into action—and what happens next into a
+better decision: truth easier to recover, decisions easier to explain, and
+consequences harder to ignore. Better systems should make good work easier—and
+corruption harder. The long game is to make it easier to create value together
+than to take it from somewhere else.
 
 ## Selected work
 

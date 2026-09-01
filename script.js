@@ -16,5 +16,4 @@ toggle.addEventListener("click", () => {
   setTheme(root.dataset.theme === "dark" ? "light" : "dark");
 });
 
-document.querySelector("[data-year]").textContent = new Date().getFullYear();
 setTheme(root.dataset.theme);
