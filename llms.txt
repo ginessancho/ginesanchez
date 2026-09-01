@@ -1,0 +1,31 @@
+# Ginés Sánchez
+
+> Ginés Sánchez builds systems for better communication between people,
+> organizations, and the living world.
+
+Ginés works where anthropology meets engineering. His academic background is
+in linguistic political ecology; his current work uses language models and
+software to turn meaning into action. At Alteridad—the condition of being
+other—he builds systems intended to support clearer, less extractive relations
+between humans, organizations, and the living world.
+
+## Current work
+
+- [Alteridad](https://www.alteridad.org/): Anthropology × engineering.
+- [Replena](https://replena.ai/): Inventory replenishment intelligence.
+- [Chieftain](https://chieftain.ing/): Organizational memory.
+- [MicroManager](https://micromanager.app/): Task coordination without
+  micromanaging people.
+
+## Profiles
+
+- [GitHub](https://github.com/ginessancho)
+- [LinkedIn](https://fr.linkedin.com/in/gasanchezarias)
+
+## Contact
+
+- Email: hello@alteridad.org
+
+## Canonical source
+
+- [Personal site](https://ginesanchez.com/)
