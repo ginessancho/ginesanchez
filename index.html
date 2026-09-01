@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Ginés Sánchez builds systems for better communication between people, organizations, and the living world."
+    >
+    <meta name="theme-color" content="#f4f1ea">
+    <meta property="og:title" content="Ginés Sánchez">
+    <meta
+      property="og:description"
+      content="Anthropology × engineering: meaning parsed into action."
+    >
+    <meta property="og:type" content="website">
+    <title>Ginés Sánchez</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("theme") ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Ginés Sánchez, home">GS</a>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.5" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
+        </svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z" />
+        </svg>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="name">
+        <p class="eyebrow">Anthropology × Engineering</p>
+        <h1 id="name">Ginés Sánchez</h1>
+        <p class="lede">
+          I build systems for better communication between people,
+          organizations, and the living world. My dissertation was in
+          linguistic political ecology; now I use language models to reason and
+          build. The thread is language: meaning parsed into action. At
+          <a href="https://www.alteridad.org/">Alteridad</a>—the condition of
+          being other—we engineer for clearer relations, with less room for
+          corruption and extractivism. Simple premise. Infinite problem.
+        </p>
+        <p class="relation">
+          human <span>↔</span> organization <span>↔</span> human <span>↔</span> organism
+        </p>
+      </section>
+
+      <section class="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">Building now</h2>
+        <div class="work-list">
+          <a class="work-item" href="https://replena.ai/">
+            <span class="work-index">01</span>
+            <span class="work-name">Replena</span>
+            <span class="work-description">Know what to buy—and what to stop buying.</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="work-item" href="https://chieftain.ing/">
+            <span class="work-index">02</span>
+            <span class="work-name">Chieftain</span>
+            <span class="work-description">Organizational memory that asks useful questions.</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="work-item" href="https://micromanager.app/">
+            <span class="work-index">03</span>
+            <span class="work-name">MicroManager</span>
+            <span class="work-description">Micromanage tasks, not people.</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Elsewhere</p>
+      <nav aria-label="Social links">
+        <a href="https://github.com/ginessancho">GitHub</a>
+        <a href="https://fr.linkedin.com/in/gasanchezarias">LinkedIn</a>
+        <a href="mailto:hello@alteridad.org">Email</a>
+      </nav>
+      <p class="copyright">© <span data-year></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
