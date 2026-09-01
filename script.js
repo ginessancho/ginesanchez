@@ -9,7 +9,7 @@ function setTheme(theme) {
     "aria-label",
     theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
   );
-  themeColor.setAttribute("content", theme === "dark" ? "#181815" : "#f4f1ea");
+  themeColor.setAttribute("content", theme === "dark" ? "#181815" : "#fdfdfc");
 }
 
 toggle.addEventListener("click", () => {

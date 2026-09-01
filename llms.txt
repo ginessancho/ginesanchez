@@ -1,21 +1,17 @@
 # Ginés Sánchez
 
-> Ginés Sánchez builds systems for better communication between people,
-> organizations, and the living world.
+> Ginés Sánchez is an anthropologist turned builder. He builds software and
+> companies at Alteridad.
 
-Ginés works where anthropology meets engineering. His academic background is
-in linguistic political ecology; his current work uses language models and
-software to turn meaning into action. At Alteridad—the condition of being
-other—he builds systems intended to support clearer, less extractive relations
-between humans, organizations, and the living world.
+Ginés trained as an anthropologist, writing his dissertation in linguistic
+political ecology. He now builds software and companies at Alteridad. His work
+uses language models and software to help organisations recover context, make
+better decisions, and see what their actions cause.
 
-## Current work
+## Selected work
 
-- [Alteridad](https://www.alteridad.org/): Anthropology × engineering.
-- [Replena](https://replena.ai/): Inventory replenishment intelligence.
-- [Chieftain](https://chieftain.ing/): Organizational memory.
-- [MicroManager](https://micromanager.app/): Task coordination without
-  micromanaging people.
+- Culture Decides: notes toward a book (September 1, 2026).
+- [Alteridad](https://www.alteridad.org/): software and company building.
 
 ## Profiles
 
