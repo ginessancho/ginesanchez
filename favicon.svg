@@ -1,9 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <style>
-    rect { fill: #1746d1; }
-    text { fill: #fff; font: 700 31px ui-sans-serif, system-ui, sans-serif; }
-    @media (prefers-color-scheme: dark) { rect { fill: #8fa9ff; } text { fill: #181815; } }
+    text { fill: #17181b; font: 600 30px ui-sans-serif, system-ui, sans-serif; letter-spacing: -1px; }
+    @media (prefers-color-scheme: dark) { text { fill: #f0eee8; } }
   </style>
-  <rect width="64" height="64" rx="14" />
-  <text x="12" y="43">G.</text>
+  <text x="32" y="43" text-anchor="middle">GS</text>
 </svg>
