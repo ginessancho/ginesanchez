@@ -1,0 +1,79 @@
+/* Bestiary page. Loaded after styles.css. */
+
+.bestiary-page .top {
+  width: min(100% - 48px, 900px);
+}
+
+.bestiary-main {
+  width: min(100% - 48px, 900px);
+  margin-inline: auto;
+  padding: clamp(48px, 8vh, 96px) 0 96px;
+}
+
+.bestiary-main .status {
+  color: var(--quiet);
+}
+
+.bestiary-main h1 {
+  margin-top: 6px;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.bestiary-main .lede {
+  max-width: 34em;
+  margin-top: 24px;
+}
+
+.field {
+  display: block;
+  width: 100%;
+  height: min(70vh, 640px);
+  margin-top: 36px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.field .ink {
+  fill: none;
+  stroke: var(--ink);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.field .solid {
+  fill: var(--ink);
+  stroke: none;
+}
+
+.reseed {
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.reseed:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 640px) {
+  .bestiary-page .top,
+  .bestiary-main {
+    width: min(100% - 36px, 900px);
+  }
+
+  .field {
+    height: 60vh;
+  }
+}
