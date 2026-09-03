@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
       name="description"
-      content="Ginés Sánchez builds software and companies at Alteridad — technology that lowers the cost of sensing, understanding, and responding to one another."
+      content="Ginés Sánchez builds systems so organisations learn faster than the world changes. Of your last ten decisions, how many came back to you?"
     >
-    <meta name="theme-color" content="#fdfdfc">
+    <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://ginesanchez.com/">
     <meta property="og:title" content="Ginés Sánchez">
     <meta
       property="og:description"
-      content="Software and companies at Alteridad."
+      content="I build systems so organisations learn faster than the world changes."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ginesanchez.com/">
@@ -22,11 +22,11 @@
     <meta name="twitter:title" content="Ginés Sánchez">
     <meta
       name="twitter:description"
-      content="Software and companies at Alteridad."
+      content="I build systems so organisations learn faster than the world changes."
     >
     <title>Ginés Sánchez</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260903-2">
     <script>
       if (
         location.protocol === "http:" &&
@@ -35,9 +35,6 @@
       ) {
         location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
       }
-
-      document.documentElement.dataset.theme =
-        localStorage.getItem("theme") || "light";
     </script>
     <script type="application/ld+json">
       {
@@ -45,75 +42,124 @@
         "@type": "Person",
         "name": "Ginés Sánchez",
         "url": "https://ginesanchez.com/",
-        "description": "Ginés Sánchez builds software and companies at Alteridad — technology that lowers the cost of sensing, understanding, and responding to one another.",
+        "jobTitle": "Founder",
+        "description": "Ginés Sánchez builds systems so organisations learn faster than the world changes.",
         "affiliation": {
           "@type": "Organization",
           "name": "Alteridad",
           "url": "https://www.alteridad.org/"
         },
         "knowsAbout": [
-          "Organisational memory",
-          "Decision systems",
-          "Software engineering",
-          "Artificial intelligence systems"
+          "Organisational decision systems",
+          "Culture",
+          "Inventory decisions",
+          "Task coordination"
         ]
       }
     </script>
   </head>
-  <body class="centered">
-    <header class="site-header">
-      <button class="theme-toggle" type="button" aria-label="Switch color theme">
-        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="3.5" />
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41" />
-        </svg>
-        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z" />
-        </svg>
-      </button>
+  <body>
+    <header class="top">
+      <a class="name" href="./" aria-current="page">Ginés Sánchez</a>
     </header>
 
     <main>
-      <section class="intro" aria-labelledby="name">
-        <h1 id="name">Ginés Sánchez</h1>
-        <p class="lede">
-          I build software and companies at
-          <a href="https://www.alteridad.org/">Alteridad</a>. We build
-          technology that lowers the cost of sensing, understanding, and
-          responding to one another&mdash;across people, organisations,
-          machines, and living systems.
-        </p>
-        <div class="creed">
-          <p>
-            We make it cheaper to turn what is known into action&mdash;and
-            what happens next into a better decision.
-          </p>
-          <p>
-            We shorten the path from understanding to action, and from
-            consequences back to the next decision.
-          </p>
-          <p>
-            We make truth easier to recover, decisions easier to explain, and
-            consequences harder to ignore.
-          </p>
-        </div>
-        <p class="long-game">
-          The long game is to make it easier to create value together than to
-          take it from somewhere else.
+      <section class="mission" aria-labelledby="mission">
+        <h1 id="mission">
+          I build systems so organisations learn faster than the world changes.
+        </h1>
+        <p>
+          Founder of <a href="https://www.alteridad.org/">Alteridad</a>, where
+          I build software for organisations: three products, one of them in
+          beta with real inventories, and a book. Trained as an anthropologist.
         </p>
       </section>
 
-      <div class="asterism" aria-hidden="true">&#8258;</div>
+      <section class="instrument" aria-labelledby="instrument-heading">
+        <h2 id="instrument-heading">
+          How many of your decisions come back to you?
+        </h2>
+        <p class="how">
+          Think of the last ten decisions your team made. A decision comes back
+          when the consequence returns to the person who decided, while they can
+          still do something about it. Not whether it went well. Whether anyone
+          found out.
+        </p>
 
-      <section class="writing" aria-label="Writing">
-        <article class="entry">
-          <time datetime="2026-09-01">September 1, 2026</time>
-          <h2><a href="culture-decides/"><cite>Culture Decides</cite></a></h2>
-          <p>Chapter one, in working notes</p>
-        </article>
+        <form class="stages" aria-label="Decisions that came back">
+          <label class="stage">
+            <span class="stage-name">Came back</span>
+            <input type="range" min="0" max="10" step="1" value="4"
+              data-closed aria-label="Decisions out of ten that came back">
+            <output class="stage-days"><b data-closed-count>4</b> of 10</output>
+          </label>
+        </form>
+
+        <figure class="year">
+          <div class="year-strip" data-year aria-hidden="true"></div>
+          <figcaption class="year-caption">
+            <span class="key"><i class="swatch closed"></i>Came back</span>
+            <span class="key"><i class="swatch open"></i>Still out there</span>
+            <span class="span-label">One year</span>
+          </figcaption>
+        </figure>
+
+        <p class="result" aria-live="polite">
+          <span data-result>
+            <b>4 of your last 10 decisions</b> came back. The other 6 are still
+            out there. Whatever they had to teach, nobody learned.
+          </span>
+          <span class="pace" data-pace>Most decisions vanish. The organisation decides more than it learns.</span>
+        </p>
+        <p class="why">
+          Reg Revans wrote it decades ago as L&nbsp;&ge;&nbsp;C: learning must
+          equal or exceed change, or the organism dies. Learning here is not
+          reading. It is a consequence finding its way back. That ratio tells
+          you what to do next: close more loops, or slow the world down.
+          Companies do both. Governments mostly do the second.
+        </p>
+      </section>
+
+      <section class="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">What I am building</h2>
+        <p class="how">
+          Each one makes more decisions come back.
+        </p>
+        <ul>
+          <li>
+            <a href="https://replena.ai/">Replena</a> closes inventory loops on
+            its own. A stockout is a consequence nobody can explain away. In
+            beta with real inventories.
+          </li>
+          <li>
+            <a href="https://chieftain.ing/">Chieftain</a> finds the loops a
+            team keeps leaving open, and asks about them. Early.
+          </li>
+          <li>
+            <a href="https://micromanager.app/">MicroManager</a> closes small
+            work loops without a manager carrying them. Early.
+          </li>
+          <li>
+            <a href="culture-decides/"><cite>Culture Decides</cite></a> is a
+            practical book about why organisations leave loops open on purpose.
+            Being written. Open to a publisher.
+          </li>
+        </ul>
+        <p class="work-note">
+          None of them charges yet.
+        </p>
+      </section>
+
+      <section class="invitation" aria-labelledby="invitation-heading">
+        <h2 id="invitation-heading">
+          Use one. Fund one. Publish the book. Build something with me.
+        </h2>
+        <p>
+          <a data-contact href="https://www.alteridad.org/#contact">Write to me</a>.
+        </p>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260903-2"></script>
   </body>
 </html>

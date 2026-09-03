@@ -1,25 +1,37 @@
 # Ginés Sánchez
 
-> Ginés Sánchez builds software and companies at Alteridad — technology that
-> lowers the cost of sensing, understanding, and responding to one another.
+> Ginés Sánchez builds systems so organisations learn faster than the world changes.
 
-Ginés builds software and companies at Alteridad, across people,
-organisations, machines, and living systems. The work makes it cheaper to turn
-what is known into action—and what happens next into a better decision;
-shortens the path from understanding to action, and from consequences back to
-the next decision; and makes truth easier to recover, decisions easier to
-explain, and consequences harder to ignore. The long game is to make it easier
-to create value together than to take it from somewhere else.
+Ginés is the founder of Alteridad and trained as an anthropologist. His work
+asks how quickly people acting together can notice what matters, decide, act,
+and learn.
 
-## Writing
+The homepage is a small instrument. It asks how many of an organisation's last
+ten decisions came back: a decision comes back when its consequence returns to
+the person who decided, while they can still do something about it. That share
+is the closure rate, drawn as ten decisions across a year, solid when they came
+back and fading when they are still out there. Reg Revans's rule L >= C
+(learning must equal or exceed change) is read here with learning meaning a
+consequence finding its way back.
 
-- [Culture Decides](https://ginesanchez.com/culture-decides/): chapter one, in
-  working notes (September 1, 2026).
+## Current work
 
-## Work
+- [Replena](https://replena.ai/): closes inventory loops on its own; a
+  stockout is a consequence nobody can explain away. In beta with real
+  inventories.
+- [Chieftain](https://chieftain.ing/): finds the loops a team keeps leaving
+  open, and asks about them. Early.
+- [MicroManager](https://micromanager.app/): closes small work loops without a
+  manager carrying them. Early.
+- [Culture Decides](https://ginesanchez.com/culture-decides/): a practical book
+  being written about why organisations leave loops open on purpose. Open to a
+  publisher.
 
-- [Alteridad](https://www.alteridad.org/): software and company building.
+None of the products charges customers yet. The current conversion is a
+conversation: hello at alteridad dot org.
+- [Alteridad](https://www.alteridad.org/): the company behind these
+  experiments.
 
 ## Canonical source
 
-- [Personal site](https://ginesanchez.com/)
+- [ginesanchez.com](https://ginesanchez.com/)
