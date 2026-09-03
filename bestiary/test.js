@@ -213,3 +213,59 @@ test("a knot's trail grows and is capped at params.length", () => {
   for (let k = 0; k < 600; k++) step(c, 1 / 60, k / 60, field);
   assert.equal(c.moduleState[0].trail.length, cap);
 });
+
+import { makeJitter, handStrokes, WEIGHT, OVERSHOOT, GAP, DOUBLE_EVERY, BOIL_FPS } from "./strokes.js";
+
+// ---------- strokes ----------
+
+const still = () => ({ dx: 0, dy: 0 });
+const lineP = (pts) => ({ points: pts, closed: false, solid: false });
+
+test("open strokes overshoot both ends", () => {
+  const [s] = handStrokes([lineP([{ x: 0, y: 0 }, { x: 10, y: 0 }])], still);
+  assert.ok(Math.abs(s.points[0].x + OVERSHOOT) < 1e-9);
+  assert.ok(Math.abs(s.points.at(-1).x - (10 + OVERSHOOT)) < 1e-9);
+});
+
+test("loops stop short of closing by GAP", () => {
+  const square = { points: [{ x: 0, y: 0 }, { x: 10, y: 0 }, { x: 10, y: 10 }, { x: 0, y: 10 }], closed: true, solid: false };
+  const [s] = handStrokes([square], still);
+  assert.equal(s.points.length, 5);
+  assert.ok(Math.abs(s.points[4].x) < 1e-9);
+  assert.ok(Math.abs(s.points[4].y - 10 * GAP) < 1e-9);
+});
+
+test("solid shapes stay closed and untouched", () => {
+  const tri = { points: [{ x: 0, y: 0 }, { x: 10, y: 0 }, { x: 0, y: 10 }], closed: true, solid: true };
+  const [s] = handStrokes([tri], still);
+  assert.equal(s.solid, true);
+  assert.deepEqual(s.points, tri.points);
+});
+
+test("every stroke has the one weight", () => {
+  const prims = Array.from({ length: 12 }, () => lineP([{ x: 0, y: 0 }, { x: 5, y: 5 }]));
+  for (const s of handStrokes(prims, still)) assert.equal(s.weight, WEIGHT);
+});
+
+test("about one stroke in DOUBLE_EVERY is doubled", () => {
+  const prims = Array.from({ length: DOUBLE_EVERY * 2 }, () => lineP([{ x: 0, y: 0 }, { x: 5, y: 5 }]));
+  assert.equal(handStrokes(prims, still).length, DOUBLE_EVERY * 2 + 2);
+});
+
+test("jitter is stable within a tick and changes across ticks", () => {
+  const a = makeJitter(1, 3), b = makeJitter(1, 3), c = makeJitter(1, 4);
+  assert.deepEqual(a(2, 5), b(2, 5));
+  assert.notDeepEqual(a(2, 5), c(2, 5));
+});
+
+test("jitter is bounded by its amount", () => {
+  const j = makeJitter(9, 0, 2);
+  for (let i = 0; i < 200; i++) {
+    const d = j(i, i * 7);
+    assert.ok(Math.abs(d.dx) <= 2 && Math.abs(d.dy) <= 2);
+  }
+});
+
+test("the boil rate is eight frames per second", () => {
+  assert.equal(BOIL_FPS, 8);
+});
