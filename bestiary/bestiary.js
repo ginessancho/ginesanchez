@@ -1,24 +1,44 @@
 // Bestiary page: seed → colony → loop → strokes → svg.
 
-import { makePlan } from "./grammar.js";
+import { makePlan, breed } from "./grammar.js";
 import { createCreature, step, pose } from "./pose.js";
 import { makeJitter, handStrokes, BOIL_FPS } from "./strokes.js";
 import { createSvgRenderer } from "./render-svg.js";
 
 const svg = document.querySelector("[data-field]");
 const reseedButton = document.querySelector("[data-reseed]");
+const lineageLabel = document.querySelector("[data-lineage]");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const render = createSvgRenderer(svg);
 
-let seed = seedFromHash();
+// The hash is "#origin" or "#origin.generation". A lineage is replayed
+// from its origin, so the same hash always shows the same family.
+let { origin, gen } = parseHash();
 let field = measure();
-let creatures = populate(seed, field);
+let plans = lineage(origin, gen, countFor(field));
+let creatures = place(plans, origin + gen * 104729, field);
 let t = 0;
 let last = null;
 
-function seedFromHash() {
-  const n = parseInt(location.hash.slice(1), 10);
-  return Number.isFinite(n) ? n : Math.floor(Math.random() * 1e9);
+function parseHash() {
+  const m = /^#(\d+)(?:\.(\d+))?$/.exec(location.hash);
+  if (m) return { origin: Number(m[1]), gen: Number(m[2] || 0) };
+  return { origin: Math.floor(Math.random() * 1e9), gen: 0 };
+}
+
+function writeHash() {
+  history.replaceState(null, "", gen ? `#${origin}.${gen}` : `#${origin}`);
+  lineageLabel.textContent = `Generation ${gen + 1}`;
+}
+
+function countFor(field) {
+  return Math.min(18, Math.max(6, Math.round((field.w * field.h) / 60000)));
+}
+
+function lineage(origin, gen, count) {
+  let out = Array.from({ length: count }, (_, i) => makePlan(origin * 31 + i));
+  for (let g = 1; g <= gen; g++) out = breed(out, origin + g * 7919);
+  return out;
 }
 
 function measure() {
@@ -28,14 +48,11 @@ function measure() {
   return { x: 0, y: 0, w, h };
 }
 
-// One creature per roughly 60 000 px², between six and eighteen.
 // Anchored species stand along the bottom; walkers keep to the lower
 // half; flyers keep to the upper part; the rest go anywhere.
-function populate(seed, field) {
-  const count = Math.min(18, Math.max(6, Math.round((field.w * field.h) / 60000)));
+function place(plans, seed, field) {
   const out = [];
-  for (let i = 0; i < count; i++) {
-    const plan = makePlan(seed * 31 + i);
+  plans.forEach((plan, i) => {
     const scale = 36 + ((seed * 7 + i * 13) % 37);
     const u = ((seed * 17 + i * 101) % 1000) / 1000;
     const v = ((seed * 23 + i * 211) % 1000) / 1000;
@@ -56,13 +73,13 @@ function populate(seed, field) {
         y = field.y + scale + v * (field.h - 2 * scale);
     }
     out.push(createCreature(plan, { x, y, scale, seed: seed + i }));
-  }
+  });
   return out;
 }
 
 function draw() {
   const prims = creatures.flatMap((c) => pose(c, t));
-  const jitter = makeJitter(seed, Math.floor(t * BOIL_FPS));
+  const jitter = makeJitter(origin + gen, Math.floor(t * BOIL_FPS));
   render(handStrokes(prims, jitter));
 }
 
@@ -85,21 +102,24 @@ function settle() {
   draw();
 }
 
-function reseed() {
-  seed = Math.floor(Math.random() * 1e9);
-  history.replaceState(null, "", `#${seed}`);
+function nextGeneration() {
+  gen += 1;
+  plans = breed(plans, origin + gen * 7919);
   t = 0;
-  creatures = populate(seed, field);
+  creatures = place(plans, origin + gen * 104729, field);
+  writeHash();
   settle();
 }
 
-reseedButton.addEventListener("click", reseed);
+reseedButton.addEventListener("click", nextGeneration);
 
 addEventListener("resize", () => {
   field = measure();
-  creatures = populate(seed, field);
+  plans = lineage(origin, gen, countFor(field));
+  creatures = place(plans, origin + gen * 104729, field);
   settle();
 });
 
+writeHash();
 settle();
 if (!reduced) requestAnimationFrame(frame);

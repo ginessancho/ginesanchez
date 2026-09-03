@@ -150,3 +150,15 @@ same interface; nothing above this layer changes.
 
 Canvas and WebGL renderers, binding to the ledger, any UI beyond reseed,
 sound, export.
+
+## Lineage (added 2026-09-03)
+
+Every field after the first is bred from the one before it. `breed(plans,
+seed, { mutation })` in `grammar.js` gives each child two parents from the
+field: species, spine and heading from one; each part from either; then a
+mutation pass that nudges sizes, phases and parameters within their ranges
+and occasionally swaps, drops or adds a part. The hard rules hold across
+generations. The hash is `#origin` or `#origin.generation`; a lineage is
+replayed from its origin on load. The button reads "Next generation" and a
+quiet label shows the generation number. No selection yet: every specimen
+breeds with equal chance.

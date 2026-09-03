@@ -48,8 +48,19 @@
   stroke: none;
 }
 
-.reseed {
+.after-field {
   margin-top: 20px;
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+}
+
+.lineage {
+  color: var(--quiet);
+  font-size: 0.85rem;
+}
+
+.reseed {
   padding: 0;
   border: 0;
   background: none;

@@ -281,3 +281,51 @@ test("pathData writes M then L with one decimal", () => {
 test("pathData of one point is a bare M", () => {
   assert.equal(pathData([{ x: 0, y: 0 }]), "M0.0 0.0");
 });
+
+import { breed, HEADS, BODIES } from "./grammar.js";
+
+// ---------- lineage ----------
+
+const parents = Array.from({ length: 8 }, (_, i) => makePlan(500 + i));
+
+test("breeding is deterministic for a seed", () => {
+  assert.deepEqual(breed(parents, 3), breed(parents, 3));
+  assert.notDeepEqual(breed(parents, 3), breed(parents, 4));
+});
+
+test("children keep the field's size and the grammar's rules", () => {
+  let gen = parents;
+  for (let g = 1; g <= 30; g++) {
+    gen = breed(gen, g);
+    assert.equal(gen.length, parents.length);
+    for (const plan of gen) {
+      const heads = plan.modules.filter((m) => m.role === "head");
+      assert.equal(heads.length, 1);
+      assert.equal(heads[0].at, 1);
+      assert.equal(heads[0].angle, plan.heading);
+      assert.ok(plan.modules.length >= 2 && plan.modules.length <= MAX_MODULES, `gen ${g}: ${plan.modules.length}`);
+      assert.ok(plan.modules.some((m) => m.role === "body"));
+      for (const m of plan.modules) assert.ok(KINDS.includes(m.kind));
+      for (const m of plan.modules) if (m.role === "head") assert.ok(HEADS.includes(m.kind));
+      for (const m of plan.modules) if (m.role === "body") assert.ok(BODIES.includes(m.kind));
+      assert.ok(SPECIES_NAMES.includes(plan.species));
+    }
+  }
+});
+
+test("without mutation every part of a child comes from a parent", () => {
+  const children = breed(parents, 11, { mutation: 0 });
+  const pool = parents.flatMap((p) => p.modules);
+  for (const child of children) {
+    assert.ok(parents.some((p) => p.species === child.species));
+    for (const m of child.modules) {
+      const strip = ({ at, angle, ...rest }) => rest;
+      assert.ok(pool.some((pm) => JSON.stringify(strip(pm)) === JSON.stringify(strip(m))), m.kind);
+    }
+  }
+});
+
+test("with mutation, something changes across a generation", () => {
+  const children = breed(parents, 12, { mutation: 1 });
+  assert.notDeepEqual(children.map((c) => c.modules), parents.map((p) => p.modules));
+});

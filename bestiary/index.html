@@ -27,7 +27,7 @@
     <title>Bestiary — Ginés Sánchez</title>
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../styles.css?v=20260903-3">
-    <link rel="stylesheet" href="bestiary.css?v=20260903-1">
+    <link rel="stylesheet" href="bestiary.css?v=20260903-2">
     <script>
       if (
         location.protocol === "http:" &&
@@ -50,12 +50,16 @@
         Organisms drawn over the years, rebuilt from the parts they were
         drawn with: a spine, and bursts, spirals, lattices, beads, combs,
         boxes and zigzag limbs hung on it. Each part moves the way it
-        looks like it should.
+        looks like it should. Every field after the first is bred from the
+        one before it: two parents, their parts recombined, a little drift.
       </p>
       <svg class="field" data-field role="img" aria-label="A field of drawn organisms, moving"></svg>
-      <button class="reseed" type="button" data-reseed>Another field</button>
+      <p class="after-field">
+        <button class="reseed" type="button" data-reseed>Next generation</button>
+        <span class="lineage" data-lineage></span>
+      </p>
     </main>
 
-    <script type="module" src="bestiary.js?v=20260903-1"></script>
+    <script type="module" src="bestiary.js?v=20260903-2"></script>
   </body>
 </html>
