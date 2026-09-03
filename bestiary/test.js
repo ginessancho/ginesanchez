@@ -134,3 +134,82 @@ test("drips fall by their state", () => {
   assert.equal(prims.length, 3);
   assert.ok(Math.abs(prims[2].points[1].y - 0.3) < 1e-9);
 });
+
+import { createCreature, step, pose, spineAt } from "./pose.js";
+
+// ---------- creatures ----------
+
+const field = { x: 0, y: 0, w: 800, h: 600 };
+
+test("spineAt walks the spine and reports the tangent", () => {
+  const nodes = [{ x: 0, y: 0 }, { x: 0, y: -0.5 }, { x: 0, y: -1 }];
+  const mid = spineAt(nodes, 0.5);
+  assert.ok(Math.abs(mid.point.y + 0.5) < 1e-9);
+  assert.ok(Math.abs(mid.tangent.y + 1) < 1e-9);
+  const end = spineAt(nodes, 1);
+  assert.ok(Math.abs(end.point.y + 1) < 1e-9);
+});
+
+test("a fresh creature's spine base sits at its position", () => {
+  const c = createCreature(makePlan(5, "walker"), { x: 100, y: 200, scale: 50, seed: 1 });
+  const prims = pose(c, 0);
+  assert.deepEqual(prims[0].points[0], { x: 100, y: 200 });
+});
+
+test("pose emits primitives for the spine and every module", () => {
+  const plan = makePlan(5, "walker");
+  const c = createCreature(plan, { x: 100, y: 200, scale: 50, seed: 1 });
+  assert.ok(pose(c, 0).length > plan.modules.length);
+});
+
+test("a walker walks along x only", () => {
+  const c = createCreature(makePlan(5, "walker"), { x: 400, y: 300, scale: 50, seed: 1 });
+  for (let k = 0; k < 120; k++) step(c, 1 / 60, k / 60, field);
+  assert.notEqual(c.x, 400);
+  assert.equal(c.y, 300);
+});
+
+test("a walker turns round at the edge", () => {
+  const plan = makePlan(5, "walker");
+  const c = createCreature(plan, { x: 60, y: 300, scale: 50, seed: 1 });
+  c.heading = Math.PI; // face left, toward the edge
+  for (let k = 0; k < 120; k++) step(c, 1 / 60, k / 60, field);
+  assert.ok(Math.cos(c.heading) > 0);
+});
+
+test("anchored species do not move", () => {
+  for (const name of ["kelp", "tower"]) {
+    const c = createCreature(makePlan(9, name), { x: 300, y: 500, scale: 50, seed: 2 });
+    for (let k = 0; k < 120; k++) step(c, 1 / 60, k / 60, field);
+    assert.equal(c.x, 300);
+    assert.equal(c.y, 500);
+  }
+});
+
+test("a colony stays inside the field after ten seconds", () => {
+  const cs = Array.from({ length: 20 }, (_, i) =>
+    createCreature(makePlan(100 + i), { x: 100 + ((i * 37) % 600), y: 100 + ((i * 53) % 400), scale: 50, seed: i }),
+  );
+  for (let k = 0; k < 600; k++) for (const c of cs) step(c, 1 / 60, k / 60, field, cs);
+  for (const c of cs) {
+    assert.ok(c.x >= field.x && c.x <= field.x + field.w, `x ${c.x}`);
+    assert.ok(c.y >= field.y && c.y <= field.y + field.h, `y ${c.y}`);
+  }
+});
+
+test("separation pushes overlapping mobile creatures apart", () => {
+  const a = createCreature(makePlan(21, "crystal"), { x: 400, y: 300, scale: 50, seed: 1 });
+  const b = createCreature(makePlan(22, "crystal"), { x: 405, y: 300, scale: 50, seed: 2 });
+  a.heading = 0; b.heading = 0; // both drifting right, same speed
+  const before = Math.abs(a.x - b.x);
+  for (let k = 0; k < 60; k++) { step(a, 1 / 60, k / 60, field, [a, b]); step(b, 1 / 60, k / 60, field, [a, b]); }
+  assert.ok(Math.abs(a.x - b.x) > before);
+});
+
+test("a knot's trail grows and is capped at params.length", () => {
+  const plan = makePlan(31, "knot");
+  const c = createCreature(plan, { x: 400, y: 300, scale: 50, seed: 3 });
+  const cap = plan.modules[0].params.length;
+  for (let k = 0; k < 600; k++) step(c, 1 / 60, k / 60, field);
+  assert.equal(c.moduleState[0].trail.length, cap);
+});

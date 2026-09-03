@@ -163,3 +163,197 @@ export function moduleGeometry(mod, t, state = {}) {
   }
   return prims;
 }
+
+// ---------- creatures ----------
+
+// Speed as a fraction of the creature's own height per second.
+const SPEED = { walker: 0.45, flyer: 0.7, crystal: 0.1, knot: 0.25, kelp: 0, tower: 0 };
+
+function initModuleState(mod, rand) {
+  if (mod.kind === "knot") return { x: 0, y: 0, trail: [{ x: 0, y: 0 }] };
+  if (mod.kind === "drip") {
+    const n = mod.params.count;
+    return {
+      lens: Array.from({ length: n }, () => rand() * mod.size),
+      speeds: Array.from({ length: n }, () => (0.2 + rand() * 0.4) * mod.size),
+    };
+  }
+  return {};
+}
+
+function advanceModuleState(mod, state, dt, rand) {
+  const s = mod.size;
+  if (mod.kind === "knot") {
+    state.x += (rand() - 0.5) * 0.14 * s;
+    state.y += (rand() - 0.5) * 0.14 * s;
+    const d = Math.hypot(state.x, state.y);
+    if (d > s) { state.x *= s / d; state.y *= s / d; }
+    state.trail.push({ x: state.x, y: state.y });
+    while (state.trail.length > mod.params.length) state.trail.shift();
+  } else if (mod.kind === "drip") {
+    for (let i = 0; i < state.lens.length; i++) {
+      state.lens[i] += state.speeds[i] * dt;
+      if (state.lens[i] > s * 1.6) state.lens[i] = 0;
+    }
+  }
+}
+
+export function createCreature(plan, { x, y, scale, seed }) {
+  const rand = rng(seed);
+  const species = plan.species;
+  let heading = plan.heading;
+  if (species === "crystal" || species === "knot") heading = rand() * TAU;
+  return {
+    plan,
+    species,
+    x, y, scale,
+    vx: 0, vy: 0,
+    heading,
+    speed: SPEED[species],
+    rand,
+    rest: plan.spine,
+    nodes: plan.spine.map((p) => ({ x: p.x, y: p.y, px: p.x, py: p.y })),
+    moduleState: plan.modules.map((m) => initModuleState(m, rand)),
+  };
+}
+
+function angleDiff(want, have) {
+  let d = want - have;
+  while (d > Math.PI) d -= TAU;
+  while (d < -Math.PI) d += TAU;
+  return d;
+}
+
+function outside(c, field, m) {
+  return c.x < field.x + m || c.x > field.x + field.w - m || c.y < field.y + m || c.y > field.y + field.h - m;
+}
+
+export function step(c, dt, t, field, others = []) {
+  const preset = SPECIES[c.species];
+  const sp = c.speed * c.scale;
+  const m = c.scale;
+
+  // Locomotion by species.
+  switch (c.species) {
+    case "walker":
+      if (c.x < field.x + m && Math.cos(c.heading) < 0) c.heading = 0;
+      if (c.x > field.x + field.w - m && Math.cos(c.heading) > 0) c.heading = Math.PI;
+      c.vx = Math.cos(c.heading) * sp;
+      c.vy = 0;
+      break;
+    case "flyer": {
+      c.heading += (c.rand() - 0.5) * 1.5 * dt;
+      if (outside(c, field, m)) {
+        const want = Math.atan2(field.y + field.h / 2 - c.y, field.x + field.w / 2 - c.x);
+        c.heading += angleDiff(want, c.heading) * 2 * dt;
+      }
+      c.vx = Math.cos(c.heading) * sp;
+      c.vy = Math.sin(c.heading) * sp;
+      break;
+    }
+    case "crystal":
+      if (c.x < field.x + m || c.x > field.x + field.w - m) c.heading = Math.PI - c.heading;
+      if (c.y < field.y + m || c.y > field.y + field.h - m) c.heading = -c.heading;
+      c.vx = Math.cos(c.heading) * sp;
+      c.vy = Math.sin(c.heading) * sp;
+      break;
+    case "knot":
+      c.vx = c.vx * 0.9 + (c.rand() - 0.5) * sp * 2;
+      c.vy = c.vy * 0.9 + (c.rand() - 0.5) * sp * 2;
+      break;
+    default:
+      c.vx = 0;
+      c.vy = 0;
+  }
+
+  // Separation, strong; alignment and cohesion are left to the bounds pull.
+  if (preset.mobile) {
+    for (const o of others) {
+      if (o === c) continue;
+      const dx = c.x - o.x, dy = c.y - o.y;
+      const d = Math.hypot(dx, dy) || 0.001;
+      const r = (c.scale + o.scale) * 0.8;
+      if (d < r) {
+        const push = ((r - d) / r) * sp * 1.5;
+        c.vx += (dx / d) * push;
+        c.vy += (dy / d) * push;
+      }
+    }
+    if (c.species === "walker") c.vy = 0;
+  }
+
+  c.x += c.vx * dt;
+  c.y += c.vy * dt;
+  if (preset.mobile) {
+    c.x = Math.min(Math.max(c.x, field.x), field.x + field.w);
+    c.y = Math.min(Math.max(c.y, field.y), field.y + field.h);
+  }
+
+  // Spine: a verlet chain in local units. The base is pinned; the rest lags
+  // behind motion and drifts back to its rest shape.
+  const fa = c.species === "flyer" ? c.heading : 0;
+  const lagWorldX = (-c.vx / c.scale) * 0.25;
+  const lagWorldY = (-c.vy / c.scale) * 0.25;
+  const lagX = Math.cos(-fa) * lagWorldX - Math.sin(-fa) * lagWorldY;
+  const lagY = Math.sin(-fa) * lagWorldX + Math.cos(-fa) * lagWorldY;
+  const last = c.nodes.length - 1;
+  for (let i = 1; i <= last; i++) {
+    const n = c.nodes[i], r = c.rest[i];
+    const vx = (n.x - n.px) * 0.9, vy = (n.y - n.py) * 0.9;
+    n.px = n.x; n.py = n.y;
+    const w = i / last;
+    n.x += vx + (r.x + lagX * w - n.x) * 0.12 + Math.sin(t * 1.3 + i) * 0.002 * w;
+    n.y += vy + (r.y + lagY * w - n.y) * 0.12;
+  }
+  for (let i = 1; i <= last; i++) {
+    const a = c.nodes[i - 1], b = c.nodes[i];
+    const rl = Math.hypot(c.rest[i].x - c.rest[i - 1].x, c.rest[i].y - c.rest[i - 1].y);
+    const d = Math.hypot(b.x - a.x, b.y - a.y) || 1e-6;
+    const k = (d - rl) / d;
+    b.x -= (b.x - a.x) * k;
+    b.y -= (b.y - a.y) * k;
+  }
+
+  c.plan.modules.forEach((mod, i) => advanceModuleState(mod, c.moduleState[i], dt, c.rand));
+}
+
+export function spineAt(nodes, at) {
+  const segs = nodes.length - 1;
+  const f = Math.min(Math.max(at, 0), 1) * segs;
+  const i = Math.min(Math.floor(f), segs - 1);
+  const u = f - i;
+  const a = nodes[i], b = nodes[i + 1];
+  const dx = b.x - a.x, dy = b.y - a.y;
+  const d = Math.hypot(dx, dy) || 1e-6;
+  return {
+    point: { x: a.x + dx * u, y: a.y + dy * u },
+    tangent: { x: dx / d, y: dy / d },
+  };
+}
+
+// World-space primitives for one creature at time t.
+// Frame: flyers rotate with their heading; everyone else stands upright.
+// Cones ignore the spine tangent and point along the heading directly.
+export function pose(c, t) {
+  const fa = c.species === "flyer" ? c.heading : 0;
+  const fc = Math.cos(fa), fs = Math.sin(fa);
+  const toWorld = (p) => ({
+    x: c.x + c.scale * (fc * p.x - fs * p.y),
+    y: c.y + c.scale * (fs * p.x + fc * p.y),
+  });
+  const prims = [{ points: c.nodes.map((n) => toWorld(n)), closed: false, solid: false }];
+  c.plan.modules.forEach((mod, i) => {
+    const { point, tangent } = spineAt(c.nodes, mod.at);
+    const isCone = mod.kind === "cone";
+    const m = isCone ? { ...mod, angle: c.species === "flyer" ? 0 : c.heading } : mod;
+    const ra = isCone ? 0 : Math.atan2(tangent.y, tangent.x) + Math.PI / 2;
+    const ca = Math.cos(ra), sa = Math.sin(ra);
+    for (const prim of moduleGeometry(m, t, c.moduleState[i])) {
+      prims.push({
+        ...prim,
+        points: prim.points.map((q) => toWorld({ x: point.x + q.x * ca - q.y * sa, y: point.y + q.x * sa + q.y * ca })),
+      });
+    }
+  });
+  return prims;
+}
