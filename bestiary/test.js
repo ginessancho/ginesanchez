@@ -269,3 +269,15 @@ test("jitter is bounded by its amount", () => {
 test("the boil rate is eight frames per second", () => {
   assert.equal(BOIL_FPS, 8);
 });
+
+import { pathData } from "./render-svg.js";
+
+// ---------- svg ----------
+
+test("pathData writes M then L with one decimal", () => {
+  assert.equal(pathData([{ x: 1, y: 2.25 }, { x: 3.14159, y: -4 }]), "M1.0 2.3L3.1 -4.0");
+});
+
+test("pathData of one point is a bare M", () => {
+  assert.equal(pathData([{ x: 0, y: 0 }]), "M0.0 0.0");
+});
