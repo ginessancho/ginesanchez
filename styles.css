@@ -408,3 +408,23 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     transition: none;
   }
 }
+
+/* Footer */
+
+.foot {
+  width: min(100% - 48px, 700px);
+  margin-inline: auto;
+  padding-bottom: 64px;
+  color: var(--quiet);
+  font-size: 0.85rem;
+}
+
+.foot p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .foot {
+    width: min(100% - 36px, 700px);
+  }
+}

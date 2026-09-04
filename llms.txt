@@ -32,6 +32,12 @@ conversation: hello at alteridad dot org.
 - [Alteridad](https://www.alteridad.org/): the company behind these
   experiments.
 
+## Also here
+
+- [Bestiary](https://ginesanchez.com/bestiary/): organisms from Ginés's
+  sketchbook, rebuilt from the parts they were drawn with and set moving.
+  Each field is bred from the one before it.
+
 ## Canonical source
 
 - [ginesanchez.com](https://ginesanchez.com/)
