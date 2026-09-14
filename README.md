@@ -11,35 +11,39 @@ hand rules are pure and tested with Node's built-in runner:
     npm test
 
 The homepage keeps supporting text in initially closed sections, with only
-one open at a time. Twenty-four drawn creatures roam across the page background.
-They start with two parts. Nearby encounters can exchange a new body part,
-which grows in briefly in blue and enables springing, gliding, or striding.
-The original head, body, spine, and individual pace remain. At most three parts
-are visible: each new acquisition replaces the previous gift, while learned
-movement is retained. Encounters have a ten-second
-cooldown per creature. Population stays fixed. These are drawing rules, not a
-model of biological reproduction or a claim about real organisations.
+one open at a time. Behind the text, twenty-four drawn creatures live in a
+small settlement that grows out of what they need, notice, tell one another
+and build together. `bestiary/settlement.js` holds that model as pure state;
+`bestiary/roaming.js` holds free movement and `bestiary/encounters.js` the
+exchange of body parts between creatures that meet.
 
-`bestiary/encounters.js` holds the exchange rules and `bestiary/roaming.js`
-holds movement. `bestiary/village.js` adds a small cooperative settlement:
-creatures discover nearby building sites, carry materials, contribute to a
-crossing, garden, and shelter, then visit and maintain them. All three kinds
-of work and at least two contributors are required to finish a structure.
-Roles are learned through practice rather than assigned by body shape.
+The settlement, in the order things tend to happen:
 
-Food, rest, company, remembered collaborators, and distance influence their
-next activity. Successful trips leave paths. Well-used gardens and shelters
-can inspire copies, capped at five places. Unattended places weather and lose
-drawing details; tending restores them. Materials are replenishable, and the
-population stays fixed. This is a drawing experiment, not a model of society.
-The earlier single-crossing experiment remains in `relationships.js` but is
-no longer used by the homepage.
+- A creek runs across the foot of the page. The far bank is richer. Nobody
+  can cross on foot; a creature that has picked up a gliding part can.
+- Energy drains. Food patches feed and run out; they regrow with a slow
+  season of plenty and scarcity. A creature only knows the patches it has
+  seen or been told about, and news can go stale.
+- A felt need proposes a site: wanting food across the water proposes a
+  crossing, surplus with nowhere to keep it proposes a store, arriving
+  twice at food that was already gone proposes a lookout, eating the last
+  of a patch proposes a garden.
+- Sites are built from material carried from quarries, and the last unit
+  only counts once two different creatures have contributed.
+- Each structure changes what is possible next: the crossing opens the far
+  bank to everyone, the store lets surplus outlive plenty, the lookout pools
+  what its visitors know, gardens grow food where it is tended.
+- Well-used routes are drawn in and unused ones fade. An exhausted creature
+  lies down and is replaced by a newcomer who knows nothing; only places,
+  paths and other creatures remember.
 
-The village runs at natural speed (1×). The quiet bottom controls pause and begin again.
-Escape also pauses/resumes; hidden tabs stop advancing. Reduced motion opens
-a settled still scene and requires pressing Play to animate. Without JavaScript,
-a static village illustration remains. The simulation lasts for the current
-page visit; reloading starts a fresh world.
+Structures are drawn from the same module vocabulary as the bodies. Nothing
+in the model ranks body shapes, and there is no leader or shared goal; it is
+a drawing experiment, not a model of society. The simulation runs at natural
+speed only. The quiet bottom controls pause and begin again; Escape also
+pauses and resumes; hidden tabs stop advancing. Reduced motion opens a
+settled still scene and requires pressing Play to animate. Without
+JavaScript, a static illustration remains. The world resets on reload.
 
 Regenerate the static fallback illustration after changing its drawing layout:
 

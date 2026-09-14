@@ -17,7 +17,7 @@
     <title>Ginés Sánchez</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preload" href="fonts/newsreader-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=20260914-village">
+    <link rel="stylesheet" href="styles.css?v=20260914-settlement">
     <script>
       if (location.protocol === "http:" && !["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)) {
         location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
@@ -37,14 +37,20 @@
     <svg class="world-field" data-world aria-hidden="true" focusable="false">
       <image href="bestiary/landing-still.svg" width="100%" height="100%" data-fallback />
     </svg>
-    <div class="village-controls" hidden role="group" aria-label="Village animation">
-      <span>A little civilization</span>
+    <div class="village-controls" hidden role="group" aria-label="Settlement animation">
+      <span>A small settlement</span>
       <button type="button" data-village-pause>Pause</button>
       <button type="button" data-village-restart>Begin again</button>
     </div>
+    <header class="top">
+      <a class="name" href="./" aria-current="page">Ginés Sánchez</a>
+      <a class="contact" data-contact href="mailto:hello@alteridad.org">Write to me <span aria-hidden="true">↗</span></a>
+    </header>
     <main>
-      <section class="mission" aria-label="Introduction">
-        <p>People often see what could work better. Acting on it is harder. I work with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.</p>
+      <section class="mission" aria-labelledby="mission">
+        <h1 id="mission">People often see what could work better. <span>Acting on it is harder.</span></h1>
+        <p class="mission-offer">I work with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.</p>
+        <p class="mission-practice">Anthropology, technology, and experiments in how we work together.</p>
       </section>
       <div class="chapters">
         <details id="together" class="chapter" name="chapters">
@@ -110,7 +116,7 @@
         </details>
       </div>
     </main>
-    <script src="script.js?v=20260914-4"></script>
-    <script type="module" src="bestiary/landing.js?v=20260914-4"></script>
+    <script src="script.js?v=20260914-settlement"></script>
+    <script type="module" src="bestiary/landing.js?v=20260914-settlement"></script>
   </body>
 </html>
