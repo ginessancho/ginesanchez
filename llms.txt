@@ -11,7 +11,7 @@ Anthropology, technology, and experiments in how we work together.
 Start with something that isn’t working. An initial conversation explores the
 problem and whether there is a useful experiment to run together.
 
-The main introduction is visible on arrival. Work together, The work, Bestiary,
+The main introduction is visible on arrival. Work together, The work, Play,
 Culture Decides, and About open within the same page, one section at a time.
 
 ## The work
@@ -46,7 +46,7 @@ anticipation so neighbours give one another space to unfold, without a shared
 destination or uniform motion. This is a drawing experiment in sharing space.
 It pauses when its section closes and supports manual steps for reduced motion.
 
-- [Bestiary](https://ginesanchez.com/#bestiary): open the optional drawing experiment.
+- [Play](https://ginesanchez.com/#bestiary): open the optional drawing experiment.
 - [The work](https://ginesanchez.com/#work)
 - [About](https://ginesanchez.com/#about)
 

@@ -20,3 +20,8 @@ get a manual step control. No animation runs behind a closed section.
 Regenerate the static fallback illustration after changing its drawing layout:
 
     node bestiary/render-landing-still.js
+
+Typography uses locally served Newsreader (regular and italic Latin WOFF2)
+for editorial text, with system sans serif controls and body copy. Font files
+come from Google Fonts; their SIL Open Font License is in `fonts/OFL-Newsreader.txt`.
+No external font requests are made by visitors.

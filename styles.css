@@ -1,5 +1,21 @@
+@font-face {
+  font-family: "Newsreader";
+  src: url("fonts/newsreader-latin-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("fonts/newsreader-latin-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
 :root {
   color-scheme: light;
+  --type-reading: "Newsreader", Georgia, serif;
+  --type-interface: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --paper: #fff;
   --ink: #161616;
   --quiet: #676767;
@@ -12,9 +28,10 @@ html, body { margin: 0; min-height: 100%; }
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: "Gill Sans", "Gill Sans MT", "Gill Sans Nova", "Trebuchet MS", sans-serif;
+  font-family: var(--type-interface);
+  font-optical-sizing: auto;
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.65;
 }
 [hidden] { display: none !important; }
 ::selection { background: var(--blue-soft); }
@@ -27,18 +44,18 @@ h1, h2, p, ul, figure { margin: 0; }
 cite { font-style: italic; }
 .top, main { width: min(100% - 48px, 700px); margin-inline: auto; }
 .top { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding-top: 30px; font-size: 15px; }
-.top .name { text-decoration: none; }
+.top .name { font-family: var(--type-reading); font-size: 22px; line-height: 1.2; text-decoration: none; }
 .top .contact { text-decoration: none; color: var(--quiet); }
 .top .contact:hover { color: var(--blue); }
 main { padding: 54px 0 64px; }
-h1 { max-width: 20em; font-size: clamp(28px, 3.2vw, 38px); font-weight: 400; line-height: 1.2; letter-spacing: -.025em; text-wrap: pretty; }
+h1 { font-family: var(--type-reading); max-width: 20em; font-size: clamp(34px, 4.2vw, 48px); font-weight: 400; line-height: 1.08; letter-spacing: -.018em; text-wrap: pretty; }
 .mission h1 > span { display: block; }
-h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
+h2 { font-family: var(--type-reading); font-size: 28px; font-weight: 400; line-height: 1.35; }
 .mission > p { margin-top: 18px; color: var(--quiet); font-size: 17px; }
-.mission > .mission-offer { color: var(--ink); font-size: 20px; max-width: 32em; margin-top: 24px; }
-.mission > .mission-practice { font-size: 15px; }
+.mission > .mission-offer { color: var(--ink); font-size: 18px; max-width: 35em; margin-top: 26px; line-height: 1.65; }
+.mission > .mission-practice { font-size: 14px; }
 .invitation { max-width: 34em; }
-.invitation h2 { font-size: 20px; }
+.invitation h2 { font-size: 28px; }
 .invitation p { margin-top: 10px; color: var(--quiet); font-size: 17px; }
 .invitation > a { display: inline-block; margin-top: 14px; color: var(--blue); font-size: 16px; }
 .small-world { max-width: none; }
@@ -57,7 +74,7 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
 .world-fallback { font-size: 14px; color: var(--quiet); margin-top: 12px; }
 .chapters { margin-top: 36px; border-top: 1px solid var(--track); }
 .chapter { border-bottom: 1px solid var(--track); }
-.chapter > summary { display: flex; justify-content: space-between; gap: 20px; cursor: pointer; list-style: none; padding: 13px 0; font-size: 16px; }
+.chapter > summary { line-height: 1.5; display: flex; justify-content: space-between; gap: 20px; cursor: pointer; list-style: none; padding: 15px 0; font-size: 15px; }
 .chapter > summary::-webkit-details-marker { display: none; }
 .chapter > summary > span { color: var(--quiet); font-weight: 400; }
 .chapter[open] > summary > span { transform: rotate(45deg); }
@@ -67,7 +84,7 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
 .projects { margin: 26px 0; }
 .projects > div { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 24px; padding: 16px 0; }
 .projects dt, .projects dd { margin: 0; }
-.projects dt > a { font-size: 18px; }
+.projects dt > a { font-family: var(--type-reading); font-size: 24px; line-height: 1.25; }
 .project-domain { display: block; font-size: 13px; color: var(--quiet); margin-top: 4px; }
 .projects dd { color: var(--quiet); }
 .reading-links { list-style: none; padding: 0; margin-top: 26px; }
@@ -78,16 +95,18 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
 .book-main { width: min(100% - 48px, 620px); padding-top: 88px; }
 .book-main .status { color: var(--quiet); }
 .book-main h1 { margin-top: 6px; font-size: clamp(36px, 6vw, 56px); line-height: 1.1; }
-.book-main .lede { margin-top: 36px; font-size: 22px; line-height: 1.4; }
+.book-main .lede { font-family: var(--type-reading); margin-top: 36px; font-size: 28px; line-height: 1.4; }
 .book-main p + p { margin-top: 22px; }
 .book-main article > p { max-width: 34em; }
 @media (max-width: 640px) {
   .top, main, .book-main { width: calc(100% - 40px); }
   body { font-size: 17px; }
   .top { padding-top: 23px; font-size: 14px; }
-  main { padding-top: 52px; }
+  main { padding-top: 46px; }
+  .mission h1 { font-size: clamp(30px, 7.7vw, 38px); line-height: 1.1; }
   .mission > p { max-width: 26em; font-size: 16px; margin-top: 16px; }
-  .mission > .mission-offer { font-size: 18px; }
+  .mission > .mission-offer { font-size: 17px; margin-top: 22px; }
+  .mission > .mission-practice { font-size: 13px; }
   .world-field { height: 380px; }
   .chapters { margin-top: 25px; }
   .projects > div { grid-template-columns: 1fr; gap: 8px; }
