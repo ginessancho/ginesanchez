@@ -37,14 +37,12 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
 .mission > p { margin-top: 18px; color: var(--quiet); font-size: 17px; }
 .mission > .mission-offer { color: var(--ink); font-size: 20px; max-width: 32em; margin-top: 24px; }
 .mission > .mission-practice { font-size: 15px; }
-.invitation { margin-top: 36px; max-width: 34em; }
+.invitation { max-width: 34em; }
 .invitation h2 { font-size: 20px; }
 .invitation p { margin-top: 10px; color: var(--quiet); font-size: 17px; }
 .invitation > a { display: inline-block; margin-top: 14px; color: var(--blue); font-size: 16px; }
-.small-world { margin-top: 28px; }
-.work { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--track); }
-.work > h2 { font-size: 20px; }
-.work > p { margin-top: 14px; color: var(--quiet); font-size: 17px; max-width: 37em; }
+.small-world { max-width: none; }
+.work > p { color: var(--quiet); font-size: 17px; max-width: 37em; }
 .work .projects { font-size: 17px; margin: 18px 0 0; }
 .world-field { display: block; width: 100%; height: 228px; overflow: hidden; }
 .world-field .ink { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; }
@@ -70,11 +68,11 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
 .world-actions { display: flex; flex-wrap: wrap; column-gap: 24px; }
 .world-count { color: var(--quiet); font-size: 14px; min-height: 21px; font-variant-numeric: tabular-nums; }
 .world-rules { margin-top: 16px; font-size: 15px; color: var(--quiet); }
-.world-rules summary { width: fit-content; cursor: pointer; }
+.world-rules h3 { margin: 0; font-size: inherit; font-weight: 400; }
 .world-rules > div { padding-top: 12px; max-width: 38em; }
 .world-rules p + p { margin-top: 12px; }
 .world-fallback { font-size: 14px; color: var(--quiet); margin-top: 12px; }
-.chapters { margin-top: 28px; border-top: 1px solid var(--track); }
+.chapters { margin-top: 36px; border-top: 1px solid var(--track); }
 .chapter { border-bottom: 1px solid var(--track); }
 .chapter > summary { display: flex; justify-content: space-between; gap: 20px; cursor: pointer; list-style: none; padding: 13px 0; font-size: 16px; }
 .chapter > summary::-webkit-details-marker { display: none; }
@@ -107,7 +105,6 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
   main { padding-top: 52px; }
   .mission > p { max-width: 26em; font-size: 16px; margin-top: 16px; }
   .mission > .mission-offer { font-size: 18px; }
-  .small-world { margin-top: 20px; }
   .world-field { height: 260px; }
   .world-caption h2 { font-size: 14px; }
   .world-caption { gap: 8px; }
@@ -116,5 +113,5 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
   .world-actions { column-gap: 20px; }
 }
 @media (pointer: coarse) {
-  .text-button, .chapter > summary, .world-rules summary { min-height: 44px; }
+  .text-button, .chapter > summary { min-height: 44px; }
 }

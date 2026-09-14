@@ -11,6 +11,9 @@ Anthropology, technology, and experiments in how we work together.
 Start with something that isn’t working. An initial conversation explores the
 problem and whether there is a useful experiment to run together.
 
+The main introduction is visible on arrival. Work together, The work, Bestiary,
+Culture Decides, and About open within the same page, one section at a time.
+
 ## The work
 
 Projects being developed through Alteridad. Fit and what remains to be tested
@@ -22,7 +25,7 @@ are assessed with each team; this is not a claim of a completed product suite.
   Exploring how contributions, responsibility, and rewards can connect.
 - [Replena](https://replena.ai/): demand, inventory, and purchasing. Testing
   algorithms and AI for buying decisions, costs, and their consequences.
-- [Culture Decides](https://ginesanchez.com/culture-decides/): a book in
+- [Culture Decides](https://ginesanchez.com/#book): a book in
   progress about how culture shapes what we notice and do, and how to see,
   question, and change it in practice.
 - [Alteridad](https://www.alteridad.org/): the company behind the work.
@@ -44,8 +47,7 @@ resource makes old information outdated. Hearing precedes action by a step.
 Shapes do not determine who learns. This is a toy model, not empirical evidence
 about real organisms or societies. It can be paused and advanced manually.
 
-- [Bestiary](https://ginesanchez.com/bestiary/): explore inheritance,
-  recombination, and mutation in the full drawing field.
+- [Bestiary](https://ginesanchez.com/#bestiary): open the optional drawing experiment.
 - [The work](https://ginesanchez.com/#work)
 - [About](https://ginesanchez.com/#about)
 

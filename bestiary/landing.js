@@ -196,6 +196,12 @@ motion.addEventListener("change", () => {
   if (motion.matches) running = false;
   updateCopy(); draw(); schedule();
 });
+svg.closest(".chapter")?.addEventListener("toggle", (event) => {
+  if (!event.currentTarget.open) running = false;
+  else measure();
+  updateCopy();
+  schedule();
+});
 document.addEventListener("visibilitychange", schedule);
 new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; schedule(); }).observe(svg);
 new ResizeObserver(measure).observe(svg);
