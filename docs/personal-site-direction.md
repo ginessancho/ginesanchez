@@ -1,5 +1,22 @@
 # Agreed direction · 14 September 2026
 
+Latest local iteration: the page has no name/contact header and no Play section.
+Creatures live across the page background. There are 24; each starts with two
+slim parts and can acquire new movement through nearby encounters, capped at
+three visible parts with original anatomy retained. Further exchanges replace
+the visible gift while retaining learned movement.
+
+The user approved extending the single shared crossing into a tiny civilization.
+The homepage now uses local discovery, material collection, three learned work
+roles, and multiple contributors to build a crossing, garden, and shelter.
+Food, rest, company, and remembered collaborators influence subsequent visits.
+Repeated trips leave paths, useful places inspire up to two copies, and places
+need tending or repair. Some creatures continue wandering. Construction occupies
+the lower page and desktop margins, while translucent paper keeps the text clear.
+Small bottom controls provide pause and restart, with only natural speed (1×); reduced motion begins
+with a still village. The world resets on reload. This implementation is for local
+review and has not been published in this task.
+
 The user approved implementation and push after settling the direction in this conversation. This section supersedes the exploratory proposal below wherever they differ.
 
 - Audience: owners and executives who can become formative early clients; collaborators and partners are secondary.

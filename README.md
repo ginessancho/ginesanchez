@@ -10,12 +10,36 @@ hand rules are pure and tested with Node's built-in runner:
 
     npm test
 
-The homepage keeps all extra content in initially closed sections, with only
-one open at a time. Its bestiary uses `bestiary/roaming.js` for independent
-paths and optional local anticipation. Creatures keep their own shapes and
-paces; nearby crowding determines how much space they have to unfold.
-Opening the bestiary starts motion; closing it pauses. Reduced-motion visitors
-get a manual step control. No animation runs behind a closed section.
+The homepage keeps supporting text in initially closed sections, with only
+one open at a time. Twenty-four drawn creatures roam across the page background.
+They start with two parts. Nearby encounters can exchange a new body part,
+which grows in briefly in blue and enables springing, gliding, or striding.
+The original head, body, spine, and individual pace remain. At most three parts
+are visible: each new acquisition replaces the previous gift, while learned
+movement is retained. Encounters have a ten-second
+cooldown per creature. Population stays fixed. These are drawing rules, not a
+model of biological reproduction or a claim about real organisations.
+
+`bestiary/encounters.js` holds the exchange rules and `bestiary/roaming.js`
+holds movement. `bestiary/village.js` adds a small cooperative settlement:
+creatures discover nearby building sites, carry materials, contribute to a
+crossing, garden, and shelter, then visit and maintain them. All three kinds
+of work and at least two contributors are required to finish a structure.
+Roles are learned through practice rather than assigned by body shape.
+
+Food, rest, company, remembered collaborators, and distance influence their
+next activity. Successful trips leave paths. Well-used gardens and shelters
+can inspire copies, capped at five places. Unattended places weather and lose
+drawing details; tending restores them. Materials are replenishable, and the
+population stays fixed. This is a drawing experiment, not a model of society.
+The earlier single-crossing experiment remains in `relationships.js` but is
+no longer used by the homepage.
+
+The village runs at natural speed (1×). The quiet bottom controls pause and begin again.
+Escape also pauses/resumes; hidden tabs stop advancing. Reduced motion opens
+a settled still scene and requires pressing Play to animate. Without JavaScript,
+a static village illustration remains. The simulation lasts for the current
+page visit; reloading starts a fresh world.
 
 Regenerate the static fallback illustration after changing its drawing layout:
 

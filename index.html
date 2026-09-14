@@ -17,7 +17,7 @@
     <title>Ginés Sánchez</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preload" href="fonts/newsreader-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=20260914-4">
+    <link rel="stylesheet" href="styles.css?v=20260914-village">
     <script>
       if (location.protocol === "http:" && !["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)) {
         location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
@@ -34,15 +34,17 @@
     </script>
   </head>
   <body class="home-page">
-    <header class="top">
-      <a class="name" href="./" aria-current="page">Ginés Sánchez</a>
-      <a class="contact" data-contact href="mailto:hello@alteridad.org">Write to me <span aria-hidden="true">↗</span></a>
-    </header>
+    <svg class="world-field" data-world aria-hidden="true" focusable="false">
+      <image href="bestiary/landing-still.svg" width="100%" height="100%" data-fallback />
+    </svg>
+    <div class="village-controls" hidden role="group" aria-label="Village animation">
+      <span>A little civilization</span>
+      <button type="button" data-village-pause>Pause</button>
+      <button type="button" data-village-restart>Begin again</button>
+    </div>
     <main>
-      <section class="mission" aria-labelledby="mission">
-        <h1 id="mission">People often see what could work better. <span>Acting on it is harder.</span></h1>
-        <p class="mission-offer">I work with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.</p>
-        <p class="mission-practice">Anthropology, technology, and experiments in how we work together.</p>
+      <section class="mission" aria-label="Introduction">
+        <p>People often see what could work better. Acting on it is harder. I work with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.</p>
       </section>
       <div class="chapters">
         <details id="together" class="chapter" name="chapters">
@@ -63,24 +65,6 @@
           <div><dt><a href="https://replena.ai/">Replena <span aria-hidden="true">↗</span></a><span class="project-domain">Demand, inventory &amp; purchasing</span></dt><dd>Testing what algorithms and AI can do for a team’s buying decisions: reducing costs and understanding the consequences.</dd></div>
           <div><dt><a href="#book"><cite>Culture Decides</cite> <span aria-hidden="true">↗</span></a><span class="project-domain">A book in progress</span></dt><dd>How culture shapes what we notice and do—and how to see it, question it, and change it in practice.</dd></div>
         </dl>
-          </div>
-        </details>
-        <details id="bestiary" class="chapter" name="chapters">
-          <summary>Play <span aria-hidden="true">+</span></summary>
-          <div class="chapter-body small-world">
-            <svg class="world-field" data-world role="img" aria-labelledby="world-title world-description">
-              <title id="world-title">A world of different creatures</title>
-              <desc id="world-description">Ten different drawn creatures, each with its own shape and way of moving.</desc>
-              <image href="bestiary/landing-still.svg" width="100%" height="100%" data-fallback />
-            </svg>
-            <p class="world-note">Each has its own way. What happens when they make room for one another?</p>
-            <div class="world-actions" data-world-controls hidden>
-              <button class="text-button" data-together type="button" aria-pressed="false">Make room for each other</button>
-              <button class="text-button quiet-button" data-play type="button">Play</button>
-              <button class="text-button quiet-button" data-reset type="button">Start again</button>
-            </div>
-            <p class="world-explanation">When they anticipate their neighbours, they can give one another space to unfold. Their shapes, paces, and paths stay their own. A drawing experiment in sharing space.</p>
-            <noscript><p class="world-fallback">Drawings from my sketchbook. Enable JavaScript to see them roam.</p></noscript>
           </div>
         </details>
         <details id="book" class="chapter" name="chapters">
@@ -121,7 +105,6 @@
             <ul class="reading-links">
               <li><a href="https://repository.lsu.edu/gradschool_dissertations/4543/">The dissertation <span>2018 ↗</span></a></li>
               <li><a href="https://www.cineanimal.com/alteridad">Alteridad+, the film <span>2017 ↗</span></a></li>
-              <li><a href="#bestiary">From the sketchbook <span>Play ↗</span></a></li>
             </ul>
           </div>
         </details>
