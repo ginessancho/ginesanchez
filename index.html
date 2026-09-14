@@ -3,170 +3,108 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="Ginés Sánchez builds systems so organisations learn faster than the world changes. Of your last ten decisions, how many came back to you?"
-    >
+    <meta name="description" content="People often see what could work better. Acting on it is harder. Anthropology, technology, and experiments in how we work together. Ginés Sánchez.">
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://ginesanchez.com/">
     <meta property="og:title" content="Ginés Sánchez">
-    <meta
-      property="og:description"
-      content="I build systems so organisations learn faster than the world changes."
-    >
+    <meta property="og:description" content="People often see what could work better. Acting on it is harder. Anthropology, technology, and experiments in how we work together.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ginesanchez.com/">
     <meta property="og:site_name" content="Ginés Sánchez">
-    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ginés Sánchez">
-    <meta
-      name="twitter:description"
-      content="I build systems so organisations learn faster than the world changes."
-    >
+    <meta name="twitter:description" content="Working with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.">
     <title>Ginés Sánchez</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=20260904-1">
+    <link rel="stylesheet" href="styles.css?v=20260914-1">
     <script>
-      if (
-        location.protocol === "http:" &&
-        location.hostname !== "localhost" &&
-        location.hostname !== "127.0.0.1"
-      ) {
+      if (location.protocol === "http:" && !["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)) {
         location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
       }
     </script>
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ginés Sánchez",
-        "url": "https://ginesanchez.com/",
-        "jobTitle": "Founder",
-        "description": "Ginés Sánchez builds systems so organisations learn faster than the world changes.",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Alteridad",
-          "url": "https://www.alteridad.org/"
-        },
-        "knowsAbout": [
-          "Organisational decision systems",
-          "Culture",
-          "Inventory decisions",
-          "Task coordination"
-        ]
+        "@context": "https://schema.org", "@type": "Person",
+        "name": "Ginés Sánchez", "url": "https://ginesanchez.com/",
+        "description": "Working with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.",
+        "affiliation": { "@type": "Organization", "name": "Alteridad", "url": "https://www.alteridad.org/" },
+        "knowsAbout": ["Anthropology", "Organisational learning", "Culture", "Software", "Art"]
       }
     </script>
   </head>
-  <body>
+  <body class="home-page">
     <header class="top">
       <a class="name" href="./" aria-current="page">Ginés Sánchez</a>
+      <a class="contact" data-contact href="mailto:hello@alteridad.org">Write to me <span aria-hidden="true">↗</span></a>
     </header>
-
     <main>
       <section class="mission" aria-labelledby="mission">
-        <h1 id="mission">
-          I build systems so organisations learn faster than the world changes.
-        </h1>
-        <p>
-          Founder of <a href="https://www.alteridad.org/">Alteridad</a>, where
-          I build software for organisations: three products, one of them in
-          beta with real inventories, and a book. Trained as an anthropologist.
-        </p>
+        <h1 id="mission">People often see what could work better. <span>Acting on it is harder.</span></h1>
+        <p class="mission-offer">I work with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.</p>
+        <p class="mission-practice">Anthropology, technology, and experiments in how we work together.</p>
       </section>
-
-      <section class="instrument" aria-labelledby="instrument-heading">
-        <h2 id="instrument-heading">
-          How many of your decisions come back to you?
-        </h2>
-        <p class="how">
-          Think of the last ten decisions your team made. A decision comes back
-          when the consequence returns to the person who decided, while they can
-          still do something about it. Not whether it went well. Whether anyone
-          found out.
-        </p>
-
-        <form class="stages" aria-label="Decisions that came back">
-          <label class="stage">
-            <span class="stage-name">Came back</span>
-            <input type="range" min="0" max="10" step="1" value="4"
-              data-closed aria-label="Decisions out of ten that came back">
-            <output class="stage-days"><b data-closed-count>4</b> of 10</output>
-          </label>
-        </form>
-
-        <figure class="year">
-          <div class="year-strip" data-year aria-hidden="true"></div>
-          <figcaption class="year-caption">
-            <span class="key"><i class="swatch closed"></i>Came back</span>
-            <span class="key"><i class="swatch open"></i>Still out there</span>
-            <span class="span-label">One year</span>
-          </figcaption>
-        </figure>
-
-        <p class="result" aria-live="polite">
-          <span data-result>
-            <b>4 of your last 10 decisions</b> came back. The other 6 are still
-            out there. Whatever they had to teach, nobody learned.
-          </span>
-          <span class="pace" data-pace>Most decisions vanish. The organisation decides more than it learns.</span>
-        </p>
-        <p class="why">
-          Reg Revans wrote it decades ago as L&nbsp;&ge;&nbsp;C: learning must
-          equal or exceed change, or the organism dies. Learning here is not
-          reading. It is a consequence finding its way back. That ratio tells
-          you what to do next: close more loops, or slow the world down.
-          Companies do both. Governments mostly do the second.
-        </p>
-      </section>
-
-      <section class="work" aria-labelledby="work-heading">
-        <h2 id="work-heading">What I am building</h2>
-        <p class="how">
-          Each one makes more decisions come back.
-        </p>
-        <ul>
-          <li>
-            <a href="https://replena.ai/">Replena</a> closes inventory loops on
-            its own. A stockout is a consequence nobody can explain away. In
-            beta with real inventories.
-          </li>
-          <li>
-            <a href="https://chieftain.ing/">Chieftain</a> finds the loops a
-            team keeps leaving open, and asks about them. Early.
-          </li>
-          <li>
-            <a href="https://micromanager.app/">MicroManager</a> closes small
-            work loops without a manager carrying them. Early.
-          </li>
-          <li>
-            <a href="culture-decides/"><cite>Culture Decides</cite></a> is a
-            practical book about why organisations leave loops open on purpose.
-            Being written. Open to a publisher.
-          </li>
-        </ul>
-        <p class="work-note">
-          None of them charges yet.
-        </p>
-      </section>
-
       <section class="invitation" aria-labelledby="invitation-heading">
-        <h2 id="invitation-heading">
-          Use one. Fund one. Publish the book. Build something with me.
-        </h2>
-        <p>
-          <a data-contact href="https://www.alteridad.org/#contact">Write to me</a>.
-        </p>
+        <h2 id="invitation-heading">Start with something that isn’t working.</h2>
+        <p>We’ll talk through the problem and see whether there’s a useful experiment we could run together.</p>
+        <a data-contact href="mailto:hello@alteridad.org">Write to me <span aria-hidden="true">↗</span></a>
       </section>
+      <section class="small-world" aria-labelledby="world-heading">
+        <svg class="world-field" data-world role="img" aria-labelledby="world-title world-description">
+          <title id="world-title">A small world of drawn organisms</title>
+          <desc id="world-description">Ten different creatures in two groups. Play to follow a discovery as it travels between them.</desc>
+          <image href="bestiary/landing-still.svg" width="100%" height="100%" data-fallback />
+        </svg>
+        <div class="world-caption">
+          <h2 id="world-heading">A small world. What could it learn?</h2>
+          <button class="text-button play-button" data-play type="button" hidden>Play <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="world-play" data-play-controls hidden>
+          <p class="world-story" data-story aria-live="polite">One creature found water. A discovery can travel.</p>
+          <div class="world-actions">
+            <button class="text-button" data-connect type="button" aria-pressed="false">Connect the groups</button>
+            <button class="text-button" data-change type="button">Move the water</button>
+            <button class="text-button" data-step type="button">One step</button>
+            <button class="text-button quiet-button" data-reset type="button">Start again</button>
+          </div>
+          <p class="world-count" data-count aria-live="polite" aria-atomic="true"></p>
+          <details class="world-rules">
+            <summary>What is happening?</summary>
+            <div>
+              <p>A small model of discovery, communication and action. A ring marks who has heard the latest news; a blue trail means they have changed course. A grey trail follows an old location.</p>
+              <p>Each step, creatures pass their newest information to their neighbours, then act on what they heard in the previous step. Connecting the groups adds one path. Moving the water gives one creature a new discovery; everyone else must hear about it. Shapes do not determine who learns.</p>
+              <p>This world has simple rules, not answers about real societies. For inheritance and mutation, explore the <a href="bestiary/">full bestiary</a>.</p>
+            </div>
+          </details>
+        </div>
+        <noscript><p class="world-fallback">Drawings from my <a href="bestiary/">bestiary</a>. Enable JavaScript to play.</p></noscript>
+      </section>
+      <section id="work" class="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">The work</h2>
+        <p>Projects I’m developing through <a href="https://www.alteridad.org/">Alteridad</a>. Each starts with a different part of working together. We’ll assess what fits your situation and what still needs to be tested.</p>
+        <dl class="projects">
+          <div><dt><a href="https://chieftain.ing/">Chieftain <span aria-hidden="true">↗</span></a><span class="project-domain">Culture</span></dt><dd>Investigating where useful observations get lost, what can be said, and who has the power to make a change.</dd></div>
+          <div><dt><a href="https://micromanager.app/">MicroManager <span aria-hidden="true">↗</span></a><span class="project-domain">Incentives &amp; responsibility</span></dt><dd>Exploring how contributions, responsibility, and rewards can connect, so people can share in the value they create.</dd></div>
+          <div><dt><a href="https://replena.ai/">Replena <span aria-hidden="true">↗</span></a><span class="project-domain">Demand, inventory &amp; purchasing</span></dt><dd>Testing what algorithms and AI can do for a team’s buying decisions: reducing costs and understanding the consequences.</dd></div>
+          <div><dt><a href="culture-decides/"><cite>Culture Decides</cite> <span aria-hidden="true">↗</span></a><span class="project-domain">A book in progress</span></dt><dd>How culture shapes what we notice and do—and how to see it, question it, and change it in practice.</dd></div>
+        </dl>
+      </section>
+      <div class="chapters">
+        <details id="about" class="chapter" name="chapters">
+          <summary>About <span aria-hidden="true">+</span></summary>
+          <div class="chapter-body">
+            <p>I’m Ginés, founder of <a href="https://www.alteridad.org/">Alteridad</a>. I trained as an anthropologist, working with Ngäbe communities in Panama on language, knowledge, and different ways of living.</p>
+            <p>Alongside the research, I made art and films to reach people an academic paper would never reach. Today I build software, write, and keep drawing. A continuing interest in what people see, what they can contribute, and what makes it possible to act together.</p>
+            <p id="question">I want to make more room for people’s creative potential, and for a society that is beautiful to live in. Organisations are where I’m putting that ambition to work: asking whose knowledge counts, who can make a change, and how the people creating value can share in it.</p>
+            <ul class="reading-links">
+              <li><a href="https://repository.lsu.edu/gradschool_dissertations/4543/">The dissertation <span>2018 ↗</span></a></li>
+              <li><a href="https://www.cineanimal.com/alteridad">Alteridad+, the film <span>2017 ↗</span></a></li>
+              <li><a href="bestiary/">From the sketchbook <span>Bestiary ↗</span></a></li>
+            </ul>
+          </div>
+        </details>
+      </div>
     </main>
-
-    <footer class="foot">
-      <p>
-        From the sketchbook: a <a href="bestiary/">bestiary</a> of drawn
-        organisms, set moving and bred field by field.
-      </p>
-    </footer>
-
-    <script src="script.js?v=20260904-1"></script>
+    <script src="script.js?v=20260914-1"></script>
+    <script type="module" src="bestiary/landing.js?v=20260914-1"></script>
   </body>
 </html>

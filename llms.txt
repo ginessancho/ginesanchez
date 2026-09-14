@@ -1,43 +1,53 @@
 # Ginés Sánchez
 
-> Ginés Sánchez builds systems so organisations learn faster than the world changes.
+> People often see what could work better. Acting on it is harder.
 
-Ginés is the founder of Alteridad and trained as an anthropologist. His work
-asks how quickly people acting together can notice what matters, decide, act,
-and learn.
+Ginés works with owners and teams to understand what gets in the way, test
+practical changes, and help the people creating value share in it.
+Anthropology, technology, and experiments in how we work together.
 
-The homepage is a small instrument. It asks how many of an organisation's last
-ten decisions came back: a decision comes back when its consequence returns to
-the person who decided, while they can still do something about it. That share
-is the closure rate, drawn as ten decisions across a year, solid when they came
-back and fading when they are still out there. Reg Revans's rule L >= C
-(learning must equal or exceed change) is read here with learning meaning a
-consequence finding its way back.
+## Working together
 
-## Current work
+Start with something that isn’t working. An initial conversation explores the
+problem and whether there is a useful experiment to run together.
 
-- [Replena](https://replena.ai/): closes inventory loops on its own; a
-  stockout is a consequence nobody can explain away. In beta with real
-  inventories.
-- [Chieftain](https://chieftain.ing/): finds the loops a team keeps leaving
-  open, and asks about them. Early.
-- [MicroManager](https://micromanager.app/): closes small work loops without a
-  manager carrying them. Early.
-- [Culture Decides](https://ginesanchez.com/culture-decides/): a practical book
-  being written about why organisations leave loops open on purpose. Open to a
-  publisher.
+## The work
 
-None of the products charges customers yet. The current conversion is a
-conversation: hello at alteridad dot org.
-- [Alteridad](https://www.alteridad.org/): the company behind these
-  experiments.
+Projects being developed through Alteridad. Fit and what remains to be tested
+are assessed with each team; this is not a claim of a completed product suite.
 
-## Also here
+- [Chieftain](https://chieftain.ing/): culture. Investigating where useful
+  observations get lost, what can be said, and who can make a change.
+- [MicroManager](https://micromanager.app/): incentives and responsibility.
+  Exploring how contributions, responsibility, and rewards can connect.
+- [Replena](https://replena.ai/): demand, inventory, and purchasing. Testing
+  algorithms and AI for buying decisions, costs, and their consequences.
+- [Culture Decides](https://ginesanchez.com/culture-decides/): a book in
+  progress about how culture shapes what we notice and do, and how to see,
+  question, and change it in practice.
+- [Alteridad](https://www.alteridad.org/): the company behind the work.
 
-- [Bestiary](https://ginesanchez.com/bestiary/): organisms from Ginés's
-  sketchbook, rebuilt from the parts they were drawn with and set moving.
-  Each field is bred from the one before it.
+## About
 
-## Canonical source
+Ginés trained as an anthropologist, working with Ngäbe communities in Panama
+on language, knowledge, and different ways of living. Alongside research he
+made art and films; today he builds software, writes, and keeps drawing.
+His ambition is to make more room for people’s creative potential and for a
+society that is beautiful to live in.
 
-- [ginesanchez.com](https://ginesanchez.com/)
+## A small world
+
+The homepage integrates organisms from Ginés's sketchbook into a playable
+model of discovery, communication, and action. Two groups exchange information
+along connections. A bridge lets news travel between groups; moving the
+resource makes old information outdated. Hearing precedes action by a step.
+Shapes do not determine who learns. This is a toy model, not empirical evidence
+about real organisms or societies. It can be paused and advanced manually.
+
+- [Bestiary](https://ginesanchez.com/bestiary/): explore inheritance,
+  recombination, and mutation in the full drawing field.
+- [The work](https://ginesanchez.com/#work)
+- [About](https://ginesanchez.com/#about)
+
+Contact: hello at alteridad dot org.
+Canonical site: https://ginesanchez.com/
