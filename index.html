@@ -16,7 +16,7 @@
     <meta name="twitter:description" content="Working with owners and teams to understand what gets in the way, test practical changes, and help the people creating value share in it.">
     <title>Ginés Sánchez</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=20260914-2">
+    <link rel="stylesheet" href="styles.css?v=20260914-3">
     <script>
       if (location.protocol === "http:" && !["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)) {
         location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
@@ -67,34 +67,19 @@
         <details id="bestiary" class="chapter" name="chapters">
           <summary>Bestiary <span aria-hidden="true">+</span></summary>
           <div class="chapter-body small-world">
-<svg class="world-field" data-world role="img" aria-labelledby="world-title world-description">
-          <title id="world-title">A small world of drawn organisms</title>
-          <desc id="world-description">Ten different creatures in two groups. Play to follow a discovery as it travels between them.</desc>
-          <image href="bestiary/landing-still.svg" width="100%" height="100%" data-fallback />
-        </svg>
-        <div class="world-caption">
-          <h2 id="world-heading">A small world. What could it learn?</h2>
-          <button class="text-button play-button" data-play type="button" hidden>Play <span aria-hidden="true">↗</span></button>
-        </div>
-        <div class="world-play" data-play-controls hidden>
-          <p class="world-story" data-story aria-live="polite">One creature found water. A discovery can travel.</p>
-          <div class="world-actions">
-            <button class="text-button" data-connect type="button" aria-pressed="false">Connect the groups</button>
-            <button class="text-button" data-change type="button">Move the water</button>
-            <button class="text-button" data-step type="button">One step</button>
-            <button class="text-button quiet-button" data-reset type="button">Start again</button>
-          </div>
-          <p class="world-count" data-count aria-live="polite" aria-atomic="true"></p>
-          <div class="world-rules">
-            <h3>What is happening?</h3>
-            <div>
-              <p>A small model of discovery, communication and action. A ring marks who has heard the latest news; a blue trail means they have changed course. A grey trail follows an old location.</p>
-              <p>Each step, creatures pass their newest information to their neighbours, then act on what they heard in the previous step. Connecting the groups adds one path. Moving the water gives one creature a new discovery; everyone else must hear about it. Shapes do not determine who learns.</p>
-              <p>This world has simple rules, not answers about real societies.</p>
+            <svg class="world-field" data-world role="img" aria-labelledby="world-title world-description">
+              <title id="world-title">A world of different creatures</title>
+              <desc id="world-description">Ten different drawn creatures, each with its own shape and way of moving.</desc>
+              <image href="bestiary/landing-still.svg" width="100%" height="100%" data-fallback />
+            </svg>
+            <p class="world-note">Each has its own way. What happens when they make room for one another?</p>
+            <div class="world-actions" data-world-controls hidden>
+              <button class="text-button" data-together type="button" aria-pressed="false">Make room for each other</button>
+              <button class="text-button quiet-button" data-play type="button">Play</button>
+              <button class="text-button quiet-button" data-reset type="button">Start again</button>
             </div>
-          </div>
-        </div>
-        <noscript><p class="world-fallback">Drawings from my sketchbook. Enable JavaScript to play.</p></noscript>
+            <p class="world-explanation">When they anticipate their neighbours, they can give one another space to unfold. Their shapes, paces, and paths stay their own. A drawing experiment in sharing space.</p>
+            <noscript><p class="world-fallback">Drawings from my sketchbook. Enable JavaScript to see them roam.</p></noscript>
           </div>
         </details>
         <details id="book" class="chapter" name="chapters">
@@ -141,7 +126,7 @@
         </details>
       </div>
     </main>
-    <script src="script.js?v=20260914-2"></script>
-    <script type="module" src="bestiary/landing.js?v=20260914-2"></script>
+    <script src="script.js?v=20260914-3"></script>
+    <script type="module" src="bestiary/landing.js?v=20260914-3"></script>
   </body>
 </html>

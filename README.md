@@ -10,12 +10,12 @@ hand rules are pure and tested with Node's built-in runner:
 
     npm test
 
-The landing page reuses the drawing engine for a small discovery-sharing
-experiment. `bestiary/learning.js` contains its pure model: information travels
-one connection per exchange and action follows receipt. The population is
-fixed across viewport sizes. The homepage keeps all extra content in initially closed sections, with only
-one open at a time. The bestiary pauses when its section closes and supports pause/manual
-steps, and uses manual steps for reduced motion.
+The homepage keeps all extra content in initially closed sections, with only
+one open at a time. Its bestiary uses `bestiary/roaming.js` for independent
+paths and optional local anticipation. Creatures keep their own shapes and
+paces; nearby crowding determines how much space they have to unfold.
+Opening the bestiary starts motion; closing it pauses. Reduced-motion visitors
+get a manual step control. No animation runs behind a closed section.
 
 Regenerate the static fallback illustration after changing its drawing layout:
 

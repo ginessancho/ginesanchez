@@ -9,7 +9,7 @@ The user approved implementation and push after settling the direction in this c
 - Invitation: **Start with something that isn’t working.** We’ll talk through the problem and see whether there’s a useful experiment we could run together. **Write to me.**
 - Follow-up layout correction: only the main introduction is visible initially. Everything else stays on the homepage in closed sections: Work together, The work, Bestiary, Culture Decides, and About. Opening one closes the others. Book and sketchbook links open their sections instead of navigating to separate pages.
 - Within The work: Chieftain (culture), MicroManager (incentives and responsibility), Replena (demand, inventory, purchasing), and Culture Decides (book in progress). Describe developing projects without implying a finished suite or established outcomes.
-- Keep the quiet, optional creature interaction inside the closed Bestiary section. It does not have to explain the entire philosophy. No new simulation mechanics are part of this revision.
+- Bestiary correction: remove the water/news model, graph, rings, arrows, and counters. Creatures roam freely when their section opens. Optional local anticipation gives neighbours room to unfold while retaining individual shapes, paces, and paths. No leader, shared destination, heading alignment, or uniformity. It is a drawing experiment, not a claim about real societies. Pause when closed; offer manual steps for reduced motion.
 - Keep the wider ambition and personal history in About: creative potential, shared life, and people sharing in the value they create.
 - Retain the white paper, restrained type, personal identity, and direct contact. Do not reopen headline exploration without evidence from the page or visitors.
 

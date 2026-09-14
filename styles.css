@@ -44,33 +44,16 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
 .small-world { max-width: none; }
 .work > p { color: var(--quiet); font-size: 17px; max-width: 37em; }
 .work .projects { font-size: 17px; margin: 18px 0 0; }
-.world-field { display: block; width: 100%; height: 228px; overflow: hidden; }
+.world-field { display: block; width: 100%; height: 380px; overflow: hidden; }
 .world-field .ink { fill: none; stroke: var(--ink); stroke-linecap: round; stroke-linejoin: round; }
 .world-field .solid { fill: var(--ink); stroke: none; }
-.world-links { fill: none; stroke: var(--track); stroke-width: 1; }
-.world-links .bridge { stroke: var(--blue); stroke-dasharray: 3 5; opacity: .5; }
-.world-signal { fill: var(--blue); }
-.world-signal.old { fill: var(--quiet); }
-.world-ring { fill: none; stroke: var(--blue); stroke-width: 1; opacity: .65; }
-.world-ring.old { stroke: var(--quiet); stroke-dasharray: 2 5; opacity: .4; }
-.world-course { fill: none; stroke: var(--blue); stroke-width: 1.4; }
-.world-course.old { stroke: var(--quiet); stroke-dasharray: 3 3; opacity: .6; }
-.world-water { fill: none; stroke: var(--blue); stroke-width: 1.3; }
-.water-label { fill: var(--blue); font-family: inherit; font-size: 12px; }
-.world-caption { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 4px; }
-.world-caption h2 { font-size: 15px; color: var(--quiet); }
 .text-button { border: 0; padding: 10px 0; background: none; color: var(--blue); font: inherit; font-size: 15px; cursor: pointer; text-underline-offset: .2em; }
 .text-button:hover { text-decoration: underline; }
-.play-button { min-width: 56px; text-align: right; }
 .quiet-button { color: var(--quiet); }
-.world-play { padding-top: 12px; }
-.world-story { font-size: 17px; min-height: 26px; }
-.world-actions { display: flex; flex-wrap: wrap; column-gap: 24px; }
-.world-count { color: var(--quiet); font-size: 14px; min-height: 21px; font-variant-numeric: tabular-nums; }
-.world-rules { margin-top: 16px; font-size: 15px; color: var(--quiet); }
-.world-rules h3 { margin: 0; font-size: inherit; font-weight: 400; }
-.world-rules > div { padding-top: 12px; max-width: 38em; }
-.world-rules p + p { margin-top: 12px; }
+.world-actions { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 24px; }
+.world-actions [aria-pressed="true"] { text-decoration: underline; }
+.world-note { font-size: 17px; margin-top: 14px; }
+.world-explanation { color: var(--quiet); font-size: 14px; max-width: 40em; margin-top: 12px; }
 .world-fallback { font-size: 14px; color: var(--quiet); margin-top: 12px; }
 .chapters { margin-top: 36px; border-top: 1px solid var(--track); }
 .chapter { border-bottom: 1px solid var(--track); }
@@ -105,9 +88,7 @@ h2 { font-size: 22px; font-weight: 400; line-height: 1.35; }
   main { padding-top: 52px; }
   .mission > p { max-width: 26em; font-size: 16px; margin-top: 16px; }
   .mission > .mission-offer { font-size: 18px; }
-  .world-field { height: 260px; }
-  .world-caption h2 { font-size: 14px; }
-  .world-caption { gap: 8px; }
+  .world-field { height: 380px; }
   .chapters { margin-top: 25px; }
   .projects > div { grid-template-columns: 1fr; gap: 8px; }
   .world-actions { column-gap: 20px; }
