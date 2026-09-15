@@ -1,5 +1,18 @@
 # Agreed direction · 14 September 2026
 
+Latest iteration (14 September, evening): the user asked for something a lot
+more sophisticated than a couple of houses, at natural speed only. The village
+module was replaced by `bestiary/settlement.js`: needs and seasons, local
+knowledge that travels by encounter and can go stale, sites proposed by felt
+needs and built from carried material by at least two contributors, and four
+structures that each change what is possible next (crossing, store, lookout,
+garden), plus fading desire lines and turnover of exhausted creatures. The
+name and contact header and the two-line headline were restored, since the
+agreed direction keeps personal identity and direct contact on the page.
+There is still no Play section; the settlement lives behind the text.
+Roles are not assigned by body shape; only gliding, a part acquired through
+an encounter, has a situational meaning, which is crossing the water.
+
 The user approved implementation and push after settling the direction in this conversation. This section supersedes the exploratory proposal below wherever they differ.
 
 - Audience: owners and executives who can become formative early clients; collaborators and partners are secondary.

@@ -11,7 +11,7 @@ Anthropology, technology, and experiments in how we work together.
 Start with something that isn’t working. An initial conversation explores the
 problem and whether there is a useful experiment to run together.
 
-The main introduction is visible on arrival. Work together, The work, Play,
+The main introduction is visible on arrival. Work together, The work,
 Culture Decides, and About open within the same page, one section at a time.
 
 ## The work
@@ -38,17 +38,21 @@ made art and films; today he builds software, writes, and keeps drawing.
 His ambition is to make more room for people’s creative potential and for a
 society that is beautiful to live in.
 
-## A small world
+## A small settlement
 
-The homepage bestiary contains freely roaming organisms from Ginés's sketchbook.
-They keep individual shapes, paces, and paths. An optional control enables local
-anticipation so neighbours give one another space to unfold, without a shared
-destination or uniform motion. This is a drawing experiment in sharing space.
-It pauses when its section closes and supports manual steps for reduced motion.
+Behind the homepage text, twenty-four drawn creatures from Ginés's sketchbook
+live in a small settlement that grows out of what they need, notice, tell one
+another and build together: a crossing over the creek, a store, a lookout and
+gardens, each built by at least two of them and each changing what the others
+can do next. Knowledge travels by meeting and can go stale; well-used routes
+are drawn in; exhausted creatures are replaced by newcomers who know nothing.
+It is a drawing experiment, not a model of society. It runs at natural speed,
+pauses when the tab is hidden, and opens as a still scene for reduced motion.
 
-- [Play](https://ginesanchez.com/#bestiary): open the optional drawing experiment.
 - [The work](https://ginesanchez.com/#work)
 - [About](https://ginesanchez.com/#about)
+- [Play](https://ginesanchez.com/bestiary/): the standalone bestiary, where
+  each generation is bred from the one before.
 
 Contact: hello at alteridad dot org.
 Canonical site: https://ginesanchez.com/
