@@ -11,3 +11,4 @@ wrangler.jsonc
 bestiary/test.js
 bestiary/*.test.js
 bestiary/render-landing-still.js
+.wrangler/
