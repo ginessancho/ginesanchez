@@ -1,0 +1,15 @@
+// Cloudflare Worker serving this site as static assets.
+// Deploy with `npx wrangler deploy` from the repository root, or connect the
+// Worker to this repository under Workers & Pages → ginesanchez → Settings →
+// Build with the deploy command `npx wrangler deploy`.
+// `.assetsignore` keeps notes, tests and tooling out of the upload.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ginesanchez",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
