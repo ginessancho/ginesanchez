@@ -1,0 +1,14 @@
+# Files in the repository that are not part of the site.
+.git/
+.github/
+.claude/
+node_modules/
+docs/
+README.md
+package.json
+package-lock.json
+wrangler.jsonc
+bestiary/test.js
+bestiary/*.test.js
+bestiary/render-landing-still.js
+.wrangler/
