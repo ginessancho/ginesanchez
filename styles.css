@@ -128,13 +128,19 @@ h2 { font-family: var(--type-reading); font-size: 28px; font-weight: 400; line-h
   background: rgb(255 255 255 / .94); color: var(--quiet);
   font: 12px/1.4 var(--type-interface);
 }
-.village-controls button {
+.village-controls button,
+.village-controls a {
   border: 0; background: transparent; color: inherit; cursor: pointer;
   font: inherit; min-height: 36px; padding: 0 2px;
+  text-decoration: none;
 }
-.village-controls button:hover { color: var(--blue); }
+.village-controls button:hover,
+.village-controls a:hover { color: var(--blue); }
+.village-controls a { display: inline-flex; align-items: center; white-space: nowrap; }
 @media (max-width: 640px) {
   .village-controls { bottom: 4px; right: 10px; gap: 10px; font-size: 11px; }
-  .village-controls button { min-height: 44px; }
+  .village-controls span { display: none; }
+  .village-controls button,
+  .village-controls a { min-height: 44px; }
   .home-page main { padding-bottom: 100px; }
 }
