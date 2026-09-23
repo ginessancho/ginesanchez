@@ -49,6 +49,15 @@ Regenerate the static fallback illustration after changing its drawing layout:
 
     node bestiary/render-landing-still.js
 
+The homepage's **Follow the beasts** link opens an optional imagined
+continuation at `bestiary/civilization.html`. Six of the drawn creatures carry
+words from the page into five eras: settlement, connected settlements, Type I,
+Type II, and Type III. Shared work, word use, resource balance, and knowledge
+spread gate each era. `bestiary/civilization.js` is a pure deterministic model;
+`bestiary/civilization-art.js` draws the era scenes. The story runs locally in
+the browser without network requests or a generative AI service. Pause,
+restart, reduced-motion opt-in, and an explicit jump between eras are provided.
+
 Typography uses locally served Newsreader (regular and italic Latin WOFF2)
 for editorial text, with system sans serif controls and body copy. Font files
 come from Google Fonts; their SIL Open Font License is in `fonts/OFL-Newsreader.txt`.
