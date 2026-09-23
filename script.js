@@ -7,36 +7,47 @@ document.querySelectorAll("[data-contact]").forEach((link) => {
   link.setAttribute("aria-label", `Write to Ginés at ${contactAddress}`);
 });
 
-// Native name grouping also works without JavaScript in supporting browsers.
-// Keep the same one-at-a-time behaviour in older browsers.
-const chapters = [...document.querySelectorAll(".chapter")];
-function closeOtherChapters(current) {
-  for (const chapter of chapters) {
-    if (chapter !== current) chapter.open = false;
+// All panels remain readable as a regular page when JavaScript is unavailable.
+const chapterLinks = [...document.querySelectorAll(".chapter-link")];
+const chapterPanels = [...document.querySelectorAll(".chapter-panel")];
+const panelsById = new Map(chapterPanels.map((panel) => [panel.id, panel]));
+
+function showChapter(id, scroll = false) {
+  for (const panel of chapterPanels) panel.hidden = panel.id !== id;
+  for (const link of chapterLinks) {
+    link.setAttribute("aria-expanded", String(link.hash.slice(1) === id));
   }
-}
-for (const chapter of chapters) {
-  chapter.addEventListener("toggle", () => {
-    if (chapter.open) closeOtherChapters(chapter);
-  });
+  if (scroll && panelsById.has(id)) panelsById.get(id).scrollIntoView();
 }
 
-// Native disclosures work without JavaScript; direct links open their section.
-function revealSection() {
+function revealHash() {
   const target = document.getElementById(location.hash.slice(1));
-  const section = target?.closest("details");
-  if (section instanceof HTMLDetailsElement) {
-    closeOtherChapters(section);
-    section.open = true;
-    target.scrollIntoView();
-  }
+  const panel = target?.closest(".chapter-panel");
+  showChapter(panel?.id ?? null, Boolean(panel));
 }
-revealSection();
-addEventListener("hashchange", revealSection);
 
-// A link must reopen its section even when the URL already has that hash.
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", () => {
-    if (link.hash === location.hash) revealSection();
+showChapter(null);
+revealHash();
+addEventListener("hashchange", revealHash);
+addEventListener("popstate", revealHash);
+
+for (const link of chapterLinks) {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const id = link.hash.slice(1);
+    const nextId = panelsById.get(id)?.hidden ? id : null;
+    showChapter(nextId);
+    history.pushState(null, "", nextId ? `#${nextId}` : location.pathname + location.search);
   });
-});
+}
+
+// Links inside a panel can open another panel, including when the hash is unchanged.
+for (const link of document.querySelectorAll('a[href^="#"]:not(.chapter-link)')) {
+  link.addEventListener("click", (event) => {
+    const panel = panelsById.get(link.hash.slice(1));
+    if (!panel) return;
+    event.preventDefault();
+    showChapter(panel.id, true);
+    history.pushState(null, "", link.hash);
+  });
+}

@@ -10,9 +10,10 @@ hand rules are pure and tested with Node's built-in runner:
 
     npm test
 
-The homepage keeps supporting text in initially closed sections, with only
-one open at a time. Behind the text, twenty-four drawn creatures live in a
-small settlement that grows out of what they need, notice, tell one another
+The homepage has four section links side by side. Selecting one opens its
+content below the links and closes any other open section. Without JavaScript,
+all sections remain readable in page order. Behind the text, twenty-four drawn
+creatures live in a small settlement that grows out of what they need, notice, tell one another
 and build together. `bestiary/settlement.js` holds that model as pure state;
 `bestiary/roaming.js` holds free movement and `bestiary/encounters.js` the
 exchange of body parts between creatures that meet.
@@ -49,7 +50,7 @@ Regenerate the static fallback illustration after changing its drawing layout:
 
     node bestiary/render-landing-still.js
 
-Typography uses locally served Newsreader (regular and italic Latin WOFF2)
-for editorial text, with system sans serif controls and body copy. Font files
-come from Google Fonts; their SIL Open Font License is in `fonts/OFL-Newsreader.txt`.
+The homepage uses locally served Newsreader (regular and italic Latin WOFF2)
+at one reading size, with smaller section links. Font files come from Google
+Fonts; their SIL Open Font License is in `fonts/OFL-Newsreader.txt`.
 No external font requests are made by visitors.
