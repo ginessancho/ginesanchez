@@ -10,10 +10,10 @@ hand rules are pure and tested with Node's built-in runner:
 
     npm test
 
-The homepage has four section links side by side. Selecting one opens its
-content below the links and closes any other open section. Without JavaScript,
-all sections remain readable in page order. Behind the text, twenty-four drawn
-creatures live in a small settlement that grows out of what they need, notice, tell one another
+The homepage places four section links side by side. Selecting one opens its
+content across the full width below them and closes any other open section.
+Without JavaScript, all sections remain readable in page order. Behind the
+text, twenty-four drawn creatures live in a small settlement that grows out of what they need, notice, tell one another
 and build together. `bestiary/settlement.js` holds that model as pure state;
 `bestiary/roaming.js` holds free movement and `bestiary/encounters.js` the
 exchange of body parts between creatures that meet.
