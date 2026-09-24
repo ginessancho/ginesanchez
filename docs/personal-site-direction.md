@@ -1,4 +1,21 @@
-# Agreed direction · 14 September 2026
+# Site direction · 23 September 2026
+
+Current local draft: the user asked to change the opening text itself and use
+one font size across the whole homepage. The opening is now one three-sentence
+paragraph; the homepage reading text, header, project details, and settlement
+controls use the same size, while the section links are smaller. Four links sit
+side by side (two per row on narrow screens); opening one shows its content
+across the full width below and closes the previous section. The exact new
+wording is a draft for review. This supersedes the older opening, typography,
+and section-layout notes below where they differ.
+
+The next draft widens the personal site's horizon: Alteridad creates value for
+clients through concrete organisational work, while Ginés aims to build a
+science of how societies change. “Psychohistory” is a reference for the scale
+of that ambition, not a claim that reliable civilisation-scale prediction
+already exists. The new three-sentence opening is exploratory copy.
+
+## Earlier agreed direction · 14 September 2026
 
 Latest iteration (14 September, evening): the user asked for something a lot
 more sophisticated than a couple of houses, at natural speed only. The village

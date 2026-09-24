@@ -10,8 +10,10 @@ hand rules are pure and tested with Node's built-in runner:
 
     npm test
 
-The homepage keeps supporting text in initially closed sections, with only
-one open at a time. Behind the text, twenty-four drawn creatures live in a
+The homepage places four section links side by side. Selecting one opens its
+content across the full width below them and closes any other open section.
+Without JavaScript, all sections remain readable in page order. Behind the
+text, twenty-four drawn creatures live in a
 small settlement that grows out of what they need, notice, tell one another
 and build together. `bestiary/settlement.js` holds that model as pure state;
 `bestiary/roaming.js` holds free movement and `bestiary/encounters.js` the
@@ -49,7 +51,16 @@ Regenerate the static fallback illustration after changing its drawing layout:
 
     node bestiary/render-landing-still.js
 
-Typography uses locally served Newsreader (regular and italic Latin WOFF2)
-for editorial text, with system sans serif controls and body copy. Font files
-come from Google Fonts; their SIL Open Font License is in `fonts/OFL-Newsreader.txt`.
-No external font requests are made by visitors.
+The homepage's **Follow the beasts** link opens an optional imagined
+continuation at `bestiary/civilization.html`. Six of the drawn creatures carry
+words from the page into five eras: settlement, connected settlements, Type I,
+Type II, and Type III. Shared work, word use, resource balance, and knowledge
+spread gate each era. `bestiary/civilization.js` is a pure deterministic model;
+`bestiary/civilization-art.js` draws the era scenes. The story runs locally in
+the browser without network requests or a generative AI service. Pause,
+restart, reduced-motion opt-in, and an explicit jump between eras are provided.
+
+The homepage uses locally served Newsreader (regular and italic Latin WOFF2)
+at one reading size, with smaller section links. Font files come from Google Fonts; their SIL Open Font
+License is in `fonts/OFL-Newsreader.txt`. No external font requests are made
+by visitors.

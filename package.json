@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test bestiary/test.js bestiary/roaming.test.js bestiary/encounters.test.js bestiary/settlement.test.js"
+    "test": "node --test bestiary/test.js bestiary/roaming.test.js bestiary/encounters.test.js bestiary/settlement.test.js bestiary/civilization.test.js"
   }
 }
