@@ -2,13 +2,13 @@
 
 A small personal site for Ginés Sánchez.
 
-The [current Northstar and next work](docs/personal-site-direction.md) connect
-the wider mission to a clear paid offer, qualified enquiries, and useful
-writing and demonstrations. The [Linear project](https://linear.app/alteridad/project/gines-sanchez-audience-and-paid-work-ca526c1e8fdb)
-tracks the same sequence. Start with the offer (ALT-292) and measurement
-baseline (ALT-293), then improve Start, distribute one piece, and validate
-paid work. Keep the sparse personal page and drawings; older experiments in
-the direction document are history, not the current roadmap.
+The [current direction](docs/personal-site-direction.md) treats this site as
+the spirit of Ginés's adventure: a brief expression of his life goal and a
+place to explore connected ideas through writing, drawings and play. The
+[Linear project](https://linear.app/alteridad/project/gines-sanchez-lifes-work-and-ideas-ca526c1e8fdb)
+tracks that purpose. The paid-offer roadmap introduced on 2 October was a
+mistaken interpretation and is superseded. The framework and next experience
+are being discussed; commercial planning belongs with the businesses.
 
 No build step and no runtime dependencies: open `index.html` directly or serve
 the directory with any static file server.
