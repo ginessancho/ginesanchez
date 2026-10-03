@@ -1,4 +1,111 @@
-# Site direction · 23 September 2026
+# Northstar · 2 October 2026
+
+Build a distinctive personal site where an owner can understand Ginés's work
+in ten seconds, encounter an idea worth sharing, and take a clear next step
+toward useful paid work through Alteridad.
+
+The wider ambition remains **a science of how societies change**: understand
+how people learn, decide and act together, anticipate where those patterns
+lead, and build ways to change their course. The commercial work gives that
+ambition a practical test and the means to keep building.
+
+## A clear experience and a useful offer
+
+The first audience is an owner or executive with a recurring costly decision,
+access to the people involved, and the ability to pay for a practical change.
+Collaborators, readers and publishers can find their own paths in Projects,
+Book and About.
+
+The next offer to test is a bounded diagnostic and experiment around one such
+decision: recover the relevant observations, make responsibility clear, agree
+a change, and return the consequences to the next decision. Define the exact
+deliverable, price hypothesis, delivery cost and capacity in ALT-292 before
+publishing terms or promising results. This is a working offer hypothesis;
+it does not establish a price or a proven outcome.
+
+The site creates attention, trust and qualified introductions. Alteridad
+delivers client work. Replena, MicroManager and Chieftain retain their own
+product and commercial plans; the site must describe their current readiness
+accurately. Culture Decides has its own writing project. A visitor can begin
+with one useful problem without having to understand all three products.
+
+Keep the current white paper, self-hosted Newsreader, one reading size, exactly
+three introductory sentences, four expandable sections and direct Email link.
+The drawings make the page curious and alive. Their purpose is to help an idea
+travel and invite participation. The settlement remains a drawing experiment;
+it is not evidence of reliable social prediction.
+
+Keep the page readable without JavaScript, usable by keyboard, and considerate
+of reduced motion. Change copy or deepen the world when visitor evidence
+justifies a specific improvement. The Type III experiment stays archived.
+
+## Next work, in order
+
+The [Linear project](https://linear.app/alteridad/project/gines-sanchez-audience-and-paid-work-ca526c1e8fdb)
+is the execution record for this repository.
+
+| Order | Work | Completion evidence |
+| --- | --- | --- |
+| 1 | [ALT-292: Define one paid entry offer](https://linear.app/alteridad/issue/ALT-292/define-one-paid-entry-offer-for-a-recurring-organisational-decision) | Buyer, recurring problem, bounded deliverable, price hypothesis, delivery cost, capacity and success measure |
+| 1 | [ALT-293: Establish the measurement baseline](https://linear.app/alteridad/issue/ALT-293/establish-the-sites-traffic-enquiry-and-paid-work-baseline) | Dated traffic and enquiry evidence with attribution and coverage limits; unknown values stay unknown |
+| 2 | [ALT-294: Make Start explain the offer](https://linear.app/alteridad/issue/ALT-294/make-start-explain-the-paid-offer-and-one-clear-next-step) | Intended visitors can explain who it is for, what they receive and how to start; production contact path checked |
+| 3 | [ALT-295: Distribute one useful piece](https://linear.app/alteridad/issue/ALT-295/run-one-attributed-essay-or-demonstration-distribution-experiment) | One buyer problem, one channel, identifiable source, review window, next step and observed response |
+| 3 | [ALT-296: Validate with buyers](https://linear.app/alteridad/issue/ALT-296/validate-the-first-paid-offer-with-buyers-and-delivered-value) | Conversations, proposal decisions, cash received, delivery cost, observed value and repeat/referral demand |
+
+ALT-294 depends on the offer. Distribution and buyer validation use the
+published invitation and measurement baseline, and can then proceed together.
+Reuse [ALT-122: first essays](https://linear.app/alteridad/issue/ALT-122/publish-first-2-3-essays-from-book-material)
+and ALT-123's podcast work rather than creating a second book backlog.
+Prepare concrete pieces, proposals and outreach for Ginés to act on; this
+roadmap is not permission to send messages or make commercial commitments.
+
+## What counts as progress
+
+Track qualified enquiries, qualified conversations, accepted paid proposals,
+cash received, delivery cost and repeat/referral demand. A qualified enquiry
+has an identifiable owner, a relevant problem, authority or access to the
+decision-maker, and interest in a next step. Visits and referral sources help
+explain the path; pageviews and contact clicks do not establish sales.
+
+A small first experiment can aim for ten relevant owners, three qualified
+conversations and one paid engagement. Those are working test goals, not
+current results or a forecast. Review the observed response and cost before
+expanding features, introducing billing or buying traffic.
+
+Traffic, conversion and revenue attributable to this site have not been
+audited. The live HTML contains a Cloudflare beacon, which does not by itself
+establish coverage, dashboard access or enquiry attribution. Inspect existing
+measurement before adding tooling. A minimal manual enquiry/proposal ledger
+can connect conversations to outcomes without a new CRM.
+
+## Baseline and preserved work
+
+At the start of this review, `main` and `origin/main` matched `dd7dbf5`.
+There was one clean primary checkout, no extra worktrees and no open PRs.
+The existing release checks succeeded and all 61 tests passed. The live
+homepage and its local release match apart from Cloudflare's injected beacon;
+the CSS, page script, landing module and fallback illustration match exactly.
+The Type III route returns 404, consistent with the earlier rollback.
+
+All seven previous PRs were already merged. PRs #3 and #4 introduced the Type
+III story and were deliberately reverted through #5; #6 restored the desired
+homepage and #7 recorded its direction. An old merged PR is not a reason to
+restore a reverted experience.
+
+The local Type III/homepage draft at `a29d580` is retained by the annotated
+tag `archive/homepage-type-iii-20260924` and a verified external Git bundle.
+Obsolete branches can be removed without selecting that experiment for
+production. Earlier chat history is recoverable from the Codex archive.
+Commercial follow-up tickets remain open until their acceptance evidence
+exists; repository cleanup does not complete them.
+
+---
+
+# Historical direction · 23 September 2026
+
+The notes below preserve earlier decisions and proposals. The October
+Northstar above governs new work. The September homepage draft was published
+in PR #6; references below to it being local or exploratory are historical.
 
 Current local draft: the user asked to change the opening text itself and use
 one font size across the whole homepage. The opening is now one three-sentence
