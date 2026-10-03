@@ -1,4 +1,60 @@
-# Northstar · 2 October 2026
+# Site direction · 3 October 2026
+
+**This website is the spirit of Ginés's adventure in the world.** It should
+explain his life's goal in a brief moment, then invite visitors into a
+connected framework of ideas they can explore and play with. It must never
+become a sales plug.
+
+The central question under discussion is what conditions allow humans and
+other living beings to flourish, and what levers change those conditions.
+Ginés wants to explore policy ramifications, ease of doing business,
+education and the connections across all the ventures. Psychohistory
+expresses the scale of curiosity; the discussion is moving toward bounded
+mechanisms and possible consequences rather than a promise to predict the
+future of social collectives.
+
+## What is settled
+
+- A brief personal expression of the life goal, with depth available through
+  exploration and play.
+- The ventures can connect as ideas and perspectives within a larger
+  intellectual adventure.
+- Commercial offers, buyer qualification, pricing and revenue targets do
+  not govern this site's design or success criteria.
+- Keep the personal, sparse and playful character. The exact new copy,
+  framework and first experiment are still being discussed.
+
+## What needs discussion
+
+- What flourishing means for humans, other organisms and their relationships.
+- How resources and flows, commitments and incentives, culture and collective
+  learning connect to institutions, education and ecological conditions.
+- Which bounded policy or cooperation mechanism could become a first
+  meaningful playable experiment, and how its assumptions and limits would
+  be visible.
+- How the existing introduction's client reference, Start's service
+  invitation and Projects' product presentation should express this purpose.
+
+## Planning correction
+
+The [Linear project](https://linear.app/alteridad/project/gines-sanchez-lifes-work-and-ideas-ca526c1e8fdb)
+now follows this purpose. ALT-292, ALT-294 and ALT-296 are canceled because
+their paid-offer framing was the assistant's mistaken interpretation.
+ALT-293 now concerns whether visitors understand the mission and engage
+with ideas; ALT-295 concerns sharing a researched essay or playable
+experiment. Both remain in Backlog while the direction is discussed.
+
+The October 2 commercial roadmap below is historical and must not be
+implemented for this site. The completed repository cleanup, preserved
+experiments and archived chats remain valid. This correction changes
+planning guidance; the public homepage has not been rewritten.
+
+---
+
+# Superseded commercial framing · 2 October 2026
+
+The assistant introduced the following commercial interpretation. Ginés
+rejected that role for this site on 3 October; it is retained only as history.
 
 Build a distinctive personal site where an owner can understand Ginés's work
 in ten seconds, encounter an idea worth sharing, and take a clear next step
@@ -103,8 +159,8 @@ exists; repository cleanup does not complete them.
 
 # Historical direction · 23 September 2026
 
-The notes below preserve earlier decisions and proposals. The October
-Northstar above governs new work. The September homepage draft was published
+The notes below preserve earlier decisions and proposals. The current
+direction at the top governs new work. The September homepage draft was published
 in PR #6; references below to it being local or exploratory are historical.
 
 Current local draft: the user asked to change the opening text itself and use
